@@ -1,0 +1,101 @@
+.payment-and-dilivery {
+	padding-bottom: 114px;
+
+	&__title {
+		margin-bottom: 21px;
+	}
+
+	&__text {
+		margin-bottom: 69px;
+
+		strong {
+			display: block;
+		}
+
+		ul {
+			list-style: disc;
+			padding-left: 30px;
+		}
+
+		&-item {
+			&::marker {
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+.payment {
+	margin-bottom: 64px;
+
+	&__title {
+		font-size: 1.88rem;
+		margin-bottom: 12px;
+	}
+
+	&__desc {
+		font-size: 1.13rem;
+		margin-bottom: 15px;
+	}
+
+	&__list {
+		list-style: disc;
+		padding-left: 30px;
+	}
+
+	&__item {
+		line-height: 130%;
+		&::marker {
+			font-size: 12px;
+		}
+	}
+}
+
+.dilivery {
+	margin-bottom: 74px;
+
+	&__title {
+		font-size: 1.88rem;
+		margin-bottom: 21px;
+	}
+	&__content {
+		display: flex;
+		flex-direction: column;
+		gap: 40px;
+	}
+	&__item {
+		display: flex;
+		gap: 30px;
+	}
+
+	&__item-title {
+		font-size: 1.13rem;
+		margin-bottom: 10px;
+	}
+
+	&__item-image {
+		border-radius: 5px;
+	}
+}
+
+.pickup {
+	&__tilte {
+		font-size: 1.88rem;
+		margin-bottom: 14px;
+	}
+	&__adress {
+		margin-bottom: 12px;
+	}
+	&__adress-title {
+		font-size: 1.13rem;
+		margin-bottom: 24px;
+	}
+	&__desc {
+		margin-bottom: 14px;
+		line-height: 130%;
+	}
+
+	div svg {
+		transform: translateY(1.6px);
+	}
+}

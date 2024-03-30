@@ -1,0 +1,51 @@
+.swiper-button-prev,
+.swiper-button-next {
+	&::after {
+		display: none;
+	}
+}
+
+.main-prev,
+.main-next {
+	border: 2px solid var(--accentColor);
+	color: var(--accentColor);
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	transition: 0.1s ease-in;
+
+	svg {
+		width: 20px;
+		height: 20px;
+	}
+
+	&:hover {
+		border: 0;
+		background-color: var(--accentColor);
+
+		svg path {
+			fill: white;
+		}
+	}
+}
+
+.main-next {
+	svg {
+		transform: rotate(180deg);
+	}
+}
+
+.swiper-pagination {
+	position: static;
+	padding-top: 40px;
+}
+
+.swiper-pagination-bullet {
+	height: 20px;
+	border-radius: 60px;
+	background-color: var(--hoverColor2);
+
+	&-active {
+		height: 25px;
+	}
+}

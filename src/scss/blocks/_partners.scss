@@ -1,0 +1,48 @@
+.partners {
+	padding-bottom: 118px;
+
+	&__title {
+		margin-bottom: 26px;
+	}
+	&__content {
+		display: flex;
+		flex-wrap: wrap;
+		gap: 30px;
+	}
+	&__item {
+		width: 48%;
+	}
+
+	&__item-top {
+		margin-bottom: 17px;
+	}
+
+	&__item-title {
+		width: 14.75rem;
+		color: black;
+		font-size: 1.125rem;
+		font-weight: 600;
+	}
+
+	&__item-image-wrapper {
+		width: 255px;
+		min-height: 126px;
+		padding: 20px 40px;
+		border-radius: 20px;
+		background: #fff;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__item-top {
+		display: flex;
+		gap: 20px;
+	}
+
+	&__item-desc {
+		font-size: var(--partners-desc-size);
+		color: var(--partners-desc-color);
+		line-height: 1.25rem;
+	}
+}

@@ -1,0 +1,86 @@
+:root {
+	--container-width: 1170px;
+	--container-padding: 15px;
+
+	// Themes
+	--page-bg: #f8f8f8;
+	--bg-dark: #333333;
+
+	--font-main: 'Montserrat';
+	--font-accent: 'Manrope', sans-serif;
+	--font-titles: var(--font-accent);
+
+	--text-color: #000;
+	--accent: #ffa500;
+
+	// Buttons
+	--btnColor: #e74e13;
+	--btn-hover: #404040;
+
+	//Breadcrambs
+	--breadcrumbs-color: #00000080;
+	--breadcrumbs-color-hover: #0000009d;
+	--breadcrumbs-color-active: #00000080;
+
+	// Media
+	--laptop-size: 1199px;
+	--tablet-size: 959px;
+	--mobile-size: 599px;
+
+	// TEXT VARS START
+	--section-title-size: 2.8125rem;
+	--section-desc-size: 1rem;
+	--header-nav-link-size: 1rem;
+	--section-title-color: #000;
+	--shopping-cart-money-color: #000;
+	--header-menu-link-hover: #e74e13;
+	--partners-desc-size: 1rem;
+	--partners-desc-color: #00000080;
+	--descAssent: #1e6140;
+	--accent-link: #1e6140;
+	--link-color: #fff;
+	--link-color-hover: #dbdbdb;
+	--placeholderColor: #484848;
+	--link-color: #fff;
+	--link-color-hover: #dbdbdb;
+    --price-for: #00000080;
+    --product-price: #84BE51;
+	// TEXT VARS END
+
+	// PRODUCT CARD
+	--card-about-bg: rgba(110, 39, 15, 0.06);
+	--basket-length-bg: #84be51;
+
+	--headerBg-color: #1e6140;
+	--promotions-bg: #1e6140;
+	--accentColor: #84be51;
+	--hoverColor2: #8d3200;
+
+	// SVG VARS START
+	--svg-color-white: #fff;
+	--compration-icon: #8c3213;
+	--basket-icon: #8c3213;
+	--header-menu-icon: #84be51;
+	--entrance-icon: #84be51;
+	--search-icon: #84be51;
+	--phone-icon: #8c3213;
+	--email-icon: #8c3213;
+	--schedule-icon: #8c3213;
+	--location-icon: #8c3213;
+	--icon-circle: #8c3213;
+	--icon-circle-user: #8c3213;
+	--heart-icon: #8c3213;
+	--top-arrow: #fff;
+	--slider-arrow: #84c551;
+	--slider-arrow-hover: #e74e13;
+    --inStock: #1E6140;
+	// SVG VARS END
+
+	// FORM
+	--error-color: #9b2020;
+}
+
+.dark {
+	background: var(--bg-dark);
+	color: var(--text-color);
+}

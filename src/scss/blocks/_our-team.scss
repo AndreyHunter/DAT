@@ -1,0 +1,25 @@
+.our-team {
+	padding-bottom: 125px;
+
+	&__title {
+		margin-bottom: 34px;
+	}
+	&__desc {
+		margin-bottom: 36px;
+	}
+	&__second-title {
+		margin-bottom: 29px;
+	}
+	&__friends-list {
+		display: flex;
+		justify-content: center;
+		// flex-wrap: wrap;
+		gap: 30px;
+	}
+	&__friends-item {
+		width: 31%;
+	}
+	&__friends-image {
+		display: block;
+	}
+}

@@ -1,0 +1,167 @@
+.product-info__content {
+    display: flex;
+    gap: 80px;
+    justify-content: space-between;
+    padding-top: 15px;
+}
+
+.product-info__left {
+	width: 40%;
+}
+
+.product-info__right {
+    width: 60%;
+
+    &-divider {
+        padding: 30px 0;
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            height: 1px;
+            background-color: #0000001a;
+        }
+    }
+}
+
+.product-info__title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+
+    &::before {
+        top: 28%;
+    }
+
+    &::after {
+        display: none;
+    }
+}
+
+.product-info__block {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inStock {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.price-for {
+    color: var(--price-for);
+}
+
+// Панель с производителем, методом опталы, доставкой
+
+.product-details-panel {
+    min-height: 174px;
+    padding: 15px 20px 30px 20px;
+    border-radius: 20px;
+    background: rgb(255, 255, 255);
+    display: flex;
+    justify-content: space-between;
+    gap: 50px;
+
+    &__left {
+        width: 40%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 30px;
+    }
+
+    &__right {
+        width: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__divider {
+        width: 1px;
+        background: rgba(0, 0, 0, 0.1);
+    }
+}
+
+.payment-panel {
+    &__body {
+        display: flex;
+        gap: 12px;
+    }
+
+    &__title {
+        margin-bottom: 10px;
+    }
+
+    &__icon-wrapper {
+        width: 45px;
+        height: 32px;
+        box-sizing: border-box;
+        border: 1px solid rgb(217, 217, 217);
+        border-radius: 4px;
+        background: rgb(255, 255, 255);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    &__image {
+        width: 100%;
+        height: 100%;
+    }
+
+    &__image-small {
+        height: 80%;
+    }   
+}
+
+.dilivery-status-panel {
+    &__title {
+        display: block;
+        margin-bottom: 11px;
+    }
+    &__text {
+        display: inline-block;
+        font-size: 0.9rem;
+        color: rgba(0, 0, 0, 0.541);
+    }
+}
+
+// Ещё какая-то хуйня
+
+.product-info__price {
+    display: flex; 
+    flex-direction: column; 
+    gap: 3px;
+
+    strong {
+        font-size: 1.5rem;
+        color: var(--product-price);
+    }
+}
+
+.product-info__basket-btn {
+    padding-left: 40px;
+    gap: 8px;
+    justify-content: start;
+
+    svg {
+        fill: var(--svg-color-white);
+    }
+}
+
+.product-info__actions {
+    display: flex;
+    gap: 15px;
+
+    div {
+        display: flex;
+        align-items: center;
+        gap: 15px;
+    }
+}

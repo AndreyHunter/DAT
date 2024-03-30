@@ -1,0 +1,124 @@
+.footer {
+	margin-top: auto;
+	padding-top: 122px;
+	background-color: white;
+	position: relative;
+}
+
+.footer__content {
+	margin-bottom: 118px;
+	display: flex;
+	justify-content: space-between;
+}
+
+/* DOP CLASS START */
+
+.footer__link {
+	display: block;
+	color: black;
+	font-size: 1.125em;
+
+	&:hover {
+		opacity: 0.9;
+	}
+}
+
+.footer__title {
+	color: black;
+	font-size: 1.125em;
+	font-weight: 600;
+}
+
+/* DOP CLASS END */
+
+.footer {
+	&__logo-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 15px;
+	}
+
+	&__logo-text {
+		max-width: 221px;
+		color: rgba(0, 0, 0, 0.6);
+	}
+
+	&__info {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__info-title {
+		margin-bottom: 26px;
+	}
+
+	&__info-list {
+		display: flex;
+		flex-direction: column;
+		gap: 13px;
+	}
+
+	&__product {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__product-title {
+		margin-bottom: 26px;
+	}
+
+	&__product-list {
+		display: flex;
+		flex-direction: column;
+		gap: 13px;
+	}
+
+	&__contacts {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__contacts-title {
+		margin-bottom: 26px;
+	}
+
+	&__contacts-wrapper {
+		display: flex;
+		flex-direction: column;
+		gap: 32px;
+	}
+}
+
+.email {
+	display: flex;
+	align-items: center;
+	gap: 6px;
+
+	&-link {
+		color: black;
+		font-size: 1rem;
+	}
+}
+
+.footer-separator {
+	padding: 17px 0px;
+	border-top: 1px solid rgba(0, 0, 0, 0.2);
+	color: black;
+	opacity: 0.5;
+	font-size: 0.875em;
+	position: relative;
+}
+
+.top-scroll {
+	width: 65px;
+	min-height: 130px;
+	display: flex;
+	justify-content: center;
+	position: absolute;
+	border-top-right-radius: 30px;
+	border-top-left-radius: 30px;
+	background-color: var(--accentColor);
+	bottom: 0;
+	right: 10vw;
+	padding-top: 30px;
+}

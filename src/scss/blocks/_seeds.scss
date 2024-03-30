@@ -1,0 +1,46 @@
+.seeds {
+	min-height: 624px;
+	padding: 109px 0 120px 0;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		inset: 0;
+		height: 100%;
+		width: 100%;
+		z-index: -1;
+		background:
+			linear-gradient(
+				80deg,
+				rgba(132, 190, 81, 0.4) 1.38%,
+				rgba(132, 190, 81, 0) 62.36%
+			),
+			linear-gradient(
+				262deg,
+				rgba(232, 78, 15, 0.3) 3.67%,
+				rgba(232, 78, 15, 0) 87.59%
+			),
+			linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
+			url(../images/seeds-bg.jpg),
+			lightgray -0.53px -645px / 100% 100% no-repeat;
+		background-size: cover;
+		background-position: 100% 100%;
+	}
+
+	&__title {
+		margin-bottom: 16px;
+		padding-left: 49px;
+		color: white;
+
+		&::after {
+			display: none;
+		}
+	}
+
+	&__desc {
+		color: white;
+		font-size: 1rem;
+		font-weight: 300;
+	}
+}

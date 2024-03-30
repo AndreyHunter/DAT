@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Оплата і доставка</title>
+		<link
+			rel="shortcut icon"
+			href="./images/favicons/logo-dark.svg"
+			type="image/x-icon"
+		/>
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
+	<body>
+		@@include('html/_header.html')
+		<main class="main">
+			<ul class="breadcrumds">
+				<li class="breadcrumbs__item">
+					<a href="./index.html" class="breadcrumbs__link">Головна</a>
+				</li>
+				<li class="breadcrumbs__item breadcrumbs__item-active">
+					Оплата і доставка
+				</li>
+			</ul>
+			@@include('html/_payment-and-dilivery.html')
+		</main>
+		@@include('html/_footer.html')
+	</body>
+</html>

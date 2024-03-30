@@ -1,0 +1,31 @@
+.about-company {
+	padding-bottom: 110px;
+
+	&__title {
+		margin-bottom: 23px;
+	}
+
+	&__list {
+		padding-left: 123px;
+	}
+	&__list-title {
+		margin-bottom: 10px;
+	}
+
+	&__desc {
+		margin-bottom: 10px;
+	}
+
+	&__list-body {
+		list-style: disc;
+		padding-left: 45px;
+	}
+	&__list-item {
+		font-weight: 300;
+		line-height: 190%;
+
+		&::marker {
+			font-size: 10px;
+		}
+	}
+}

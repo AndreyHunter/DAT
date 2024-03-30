@@ -1,0 +1,41 @@
+.protect-methods {
+	min-height: 500px;
+	padding-block: 109px;
+	position: relative;
+
+	&::before {
+		content: '';
+		position: absolute;
+		top: 0;
+		left: 0;
+		height: 100%;
+		width: 100%;
+		background:
+			linear-gradient(
+				80deg,
+				rgba(132, 190, 81, 0.4) 1.38%,
+				rgba(132, 190, 81, 0) 62.36%
+			),
+			linear-gradient(
+				262deg,
+				rgba(232, 78, 15, 0.3) 3.67%,
+				rgba(232, 78, 15, 0) 87.59%
+			),
+			linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
+			url(../images/protect-plants-icons/protect-plants-bg.jpg),
+			lightgray 0px -721.412px no-repeat;
+		background-size: cover;
+		z-index: -1;
+		background-position: center;
+	}
+
+	&__title {
+		color: white;
+		margin-bottom: 16px;
+	}
+
+	&__desc {
+		color: white;
+		font-weight: 300;
+	}
+}

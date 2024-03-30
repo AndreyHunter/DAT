@@ -1,0 +1,290 @@
+.header-index-bg {
+	background: url(../images/index-bg.png) no-repeat 100% 100%;
+	background-size: cover;
+	min-height: 100vh;
+	position: relative;
+}
+
+.ellipse-header {
+	width: 500px;
+	height: 500px;
+	filter: blur(3.75rem);
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		rgba(231, 78, 19, 0.1),
+		rgba(231, 78, 19, 0) 100%
+	);
+	position: absolute;
+	top: -170px;
+	right: -50px;
+}
+
+// HEADER TOP START
+.header__nav {
+	width: 100%;
+	background-color: var(--headerBg-color);
+}
+
+.header__nav-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.header__nav-list {
+	display: flex;
+	gap: 40px;
+}
+
+.header__nav-item {
+	position: relative;
+}
+
+.header__nav-link {
+	display: block;
+	color: var(--link-color);
+	font-size: var(--header-nav-link-size);
+	font-weight: 300;
+	padding-block: 15px;
+
+	&:hover {
+		color: #dbdbdb;
+		background-color: #347153;
+	}
+}
+
+.about-link::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 112%;
+	transform: translateY(-50%);
+	transition: 0.2s ease-in-out;
+	background: url(../images/svgicons/arrow-down.svg);
+	width: 12px;
+	height: 12px;
+}
+
+.header__nav-sub-list {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	width: 221px;
+	min-height: 133px;
+	background-color: #347153;
+	padding: 15px 20px 18px 12px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	transition: 0.2s ease-in-out;
+
+	&-item:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	&-link {
+		color: var(--link-color);
+
+		&:hover {
+			color: var(--link-color-hover);
+		}
+	}
+}
+
+.header__nav-list li:hover .header__nav-sub-list {
+	visibility: visible;
+	opacity: 1;
+}
+
+.header__nav-list li:hover .about-link {
+	background-color: #347153;
+}
+
+.header__nav-list li:hover .about-link::before {
+	transform: rotate(180deg) translateY(4px);
+}
+
+.header__nav-separator {
+	width: 1px;
+	min-height: 50px;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.header__top-reg {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	color: white;
+	font-size: 1rem;
+	font-weight: 300;
+
+	&:hover {
+		color: #dbdbdb;
+	}
+}
+
+// HEADER TOP END
+
+/* HEADER CONTENT START */
+
+.header__content {
+	padding: 20px 0;
+	display: flex;
+	align-items: center;
+}
+
+.header__logo {
+	margin-right: 30px;
+}
+
+.header__content-body {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+}
+
+.header__search {
+	width: 100%;
+	max-width: 342px;
+	min-height: 40px;
+	padding-inline: 19px 22px;
+	border-radius: 90px;
+	border: 1px solid rgba(0, 0, 0, 0.2);
+	background: white;
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+
+	&-input {
+		width: 100%;
+		border: 0;
+		outline: 0;
+
+		&::placeholder {
+			font-size: 1rem;
+			font-weight: 400;
+			color: var(--placeholderColor);
+		}
+	}
+
+	&-divider {
+		width: 1px;
+		height: 28px;
+		background: rgba(0, 0, 0, 0.2);
+		margin-right: 8px;
+	}
+}
+
+.phone {
+	display: flex;
+	gap: 6px;
+
+	&__text {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__link {
+		margin-bottom: 3px;
+		color: black;
+		font-size: 1rem;
+	}
+
+	&__feedback {
+		color: var(--accentColor);
+		font-size: 0.875rem;
+		font-weight: 700;
+		text-decoration-line: underline;
+	}
+}
+
+.user-actions {
+	display: flex;
+	align-items: center;
+	gap: 10px;
+
+	&__link {
+		display: flex;
+	}
+
+	.shopping-cart-money {
+		font-size: 0.85rem;
+		font-weight: 700;
+		color: var(--shopping-cart-money-color);
+	}
+}
+
+.user-actions__basket {
+	position: relative;
+}
+
+.basket-lenght {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	border-radius: 50%;
+	background-color: var(--basket-length-bg);
+	font-size: 12px;
+	color: white;
+	position: absolute;
+	top: -4px;
+	right: 0;
+}
+
+.icon-circle-user {
+	cursor: pointer;
+	transition: 0.1s ease-in;
+
+	&:hover {
+		background-color: var(--icon-circle-user);
+		filter: drop-shadow(0 5px 14px rgba(140, 50, 19, 0.3));
+
+		svg {
+			fill: var(--svg-color-white);
+		}
+	}
+}
+
+/* HEADER MENU START */
+
+.header__menu-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.header__menu-item {
+	width: 19%;
+}
+
+.header__menu-link {
+	min-height: 40px;
+	border-radius: 20px;
+	border: 1px solid #1e6140;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 6px;
+	color: black;
+	font-weight: 600;
+	line-height: 105.9%;
+	text-transform: uppercase;
+	transition: all 0.1s ease-in;
+
+	&:hover {
+		background-color: var(--header-menu-link-hover);
+		color: white;
+		border: none;
+
+		.header-menu-icon {
+			fill: white;
+		}
+
+		#fertilizers path {
+			stroke: white;
+		}
+	}
+}
+
+.p-left {
+	padding-left: 10px;
+}

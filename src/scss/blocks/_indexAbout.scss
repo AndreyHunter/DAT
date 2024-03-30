@@ -1,0 +1,58 @@
+.about {
+	position: relative;
+	margin-inline: auto;
+	max-width: 1470px;
+	padding: 100px 15px 119px 15px;
+
+	&__content {
+		display: flex;
+		gap: 125px;
+	}
+
+	&__image-wrapper {
+		width: 683px;
+	}
+
+	&__image {
+		display: block;
+		border-top-right-radius: 40%;
+		border-bottom-left-radius: 40%;
+	}
+
+	&__title {
+		margin-bottom: 25px;
+		transform: translateX(40px);
+
+		&::after {
+			display: none;
+		}
+	}
+
+	&__desc {
+		margin-bottom: 32px;
+		max-width: 540px;
+		font-size: 1rem;
+	}
+}
+
+.ellipse-about {
+	position: absolute;
+	width: 700px;
+	height: 500px;
+	filter: blur(3.75rem);
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		rgba(231, 78, 19, 0.1),
+		rgba(231, 78, 19, 0) 100%
+	);
+}
+
+.about-el-1 {
+	top: 0;
+	right: -400px;
+}
+
+.about-el-2 {
+	left: -500px;
+	bottom: -400px;
+}

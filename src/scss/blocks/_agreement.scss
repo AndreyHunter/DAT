@@ -1,0 +1,47 @@
+.agreement {
+	padding-bottom: 109px;
+
+	&__title {
+		margin-bottom: 32px;
+	}
+
+	&__text-order {
+		margin-bottom: 30px;
+	}
+
+	&__text-termins {
+		margin-bottom: 30px;
+
+		&-title {
+			display: block;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__text-position {
+		margin-bottom: 30px;
+
+		&-title {
+			display: block;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__text-services {
+		margin-bottom: 30px;
+
+		&-title {
+			display: block;
+			margin-bottom: 16px;
+		}
+	}
+
+	&__text-account {
+		margin-bottom: 30px;
+
+		&-title {
+			display: block;
+			margin-bottom: 16px;
+		}
+	}
+}

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>DAT</title>
+		<link
+			rel="shortcut icon"
+			href="./images/favicons/logo-dark.svg"
+			type="image/x-icon"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+		/>
+		<link rel="stylesheet" href="./css/main.css" />
+	</head>
+	<body>
+		<div class="header-index-bg">
+			@@include('html/_header.html') @@include('html/_hero.html')
+			<!-- <div class="el ellipse-header"></div> -->
+		</div>
+
+		<main class="main">
+			@@include('html/_indexAbout.html') @@include('html/_novetly.html')
+			@@include('html/_promotions.html') @@include('html/_partners-slider.html')
+			@@include('html/_seeds.html')
+		</main>
+
+		@@include('html/_footer.html') @@include('html/_modals.html')
+
+		<script src="./js/index.bundle.js" type="module" defer></script>
+	</body>
+</html>

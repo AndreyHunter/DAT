@@ -1,0 +1,75 @@
+// .btn {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     padding: 10px 15px;
+//     min-height: 40px;
+
+//     border-radius: 5px;
+//     background: #333333;
+//     color: #fff;
+
+//     transition: background-color 0.2s ease-in, color 0.2s ease-in;
+// }
+
+// .btn:hover {
+//     background-color: var(--btn-hover);
+// }
+
+// .btn:active {
+//     background-color: #222222;
+// }
+
+.btn {
+	width: 220px;
+	min-height: 47px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: none;
+	border-radius: 20px;
+	box-shadow: 0px 0px 8px 0px rgba(0, 0, 0, 0.15);
+	padding-inline: 15px;
+	font-size: 1rem;
+	font-weight: 700;
+	transition: 0.1s ease-in;
+	cursor: pointer;
+
+	&:active {
+		transform: translateY(1px);
+	}
+}
+
+.btn-assent {
+	background-color: #e74e13;
+    color: white;
+
+	&:hover {
+		background-color: #c7420e;
+	}
+}
+
+.btn-transparent {
+    background-color: transparent;
+    border: 1px solid #e74e13;
+	color: #e74e13;
+    box-shadow: none;
+    gap: 11px;
+
+    svg {
+        fill: #E74E13;
+    }
+}
+
+.continue-shopping-btn {
+	width: 280px;
+	background-color: transparent;
+	gap: 8px;
+	border: 1px solid #e74e13;
+	color: #e74e13;
+}
+
+.checkout-btn {
+	width: 260px;
+	gap: 10px;
+}
