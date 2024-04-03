@@ -38,22 +38,22 @@ const serverNotify = {
 	open: true,
 };
 
-const svgStack = {
-	mode: {
-		stack: {
-			example: true,
-		},
-	},
-	shape: {
-		transform: [
-			{
-				svgo: {
-					js2svg: { indent: 4, pretty: true },
-				},
-			},
-		],
-	},
-};
+// const svgStack = {
+// 	mode: {
+// 		stack: {
+// 			example: true,
+// 		},
+// 	},
+// 	shape: {
+// 		transform: [
+// 			{
+// 				svgo: {
+// 					js2svg: { indent: 4, pretty: true },
+// 				},
+// 			},
+// 		],
+// 	},
+// };
 
 const svgSymbol = {
 	mode: {
@@ -154,7 +154,12 @@ gulp.task('images:docs', function () {
 
 		.pipe(gulp.src('./src/images/**/*'))
 		.pipe(changed('./docs/images/'))
-		.pipe(imagemin({ verbose: true }))
+		.pipe(imagemin(
+			[
+				imagemin.mozjpeg({ quality: 85, progressive: true }),
+			],
+			{ verbose: true }
+		))
 		.pipe(gulp.dest('./docs/images/'));
 });
 

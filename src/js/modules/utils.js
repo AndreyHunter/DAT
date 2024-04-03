@@ -1,10 +1,15 @@
-export function getProducts(url) {
-	return fetch(url)
-		.then((res) => {
-			if (!res.ok) {
-				throw new Error('Network response was not ok');
-			}
-			return res.json();
-		})
-		.catch((error) => console.error('Error', error));
+async function getProducts(url) {
+	try {
+		const res = await fetch(url);
+		if (!res.ok) {
+			throw new Error();
+		}
+
+		return await res.json();
+
+	} catch (err) {
+		console.error('Network err', err);
+	}
 }
+
+export {getProducts};

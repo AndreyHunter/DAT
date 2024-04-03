@@ -4,7 +4,7 @@ import { Swiper } from './modules/swiper.js';
 import Choices from 'choices.js';
 import { choisesSettings } from './modules/choices.js';
 import { productsData } from './modules/server.js';
-import { getProducts } from './modules/utils.js';
+import {getProducts} from './modules/utils.js';
 import { 
 	createBasketItem,
 	renderProductImages,
@@ -87,22 +87,7 @@ function getParamerFromURL(parametr) {
 	return urlParams.get(parametr);
 }
 
-// const tabsButtons = document.querySelectorAll('.product-details__btn');
-// const tabsContent = document.querySelectorAll('[data-content]');
-
-// tabsButtons.forEach((btn, index) => {
-
-// 	btn.addEventListener('click', () =>  {
-// 		if (!btn.classList.contains('active')) {
-// 			tabsButtons.forEach(btn => btn.classList.remove('active'));
-// 			tabsContent.forEach(content => content.classList.remove('active'));
-    
-// 			tabsButtons[index].classList.add('active');
-// 			tabsContent[index].classList.add('active');
-// 		}
-// 	});
-	
-// });
+// Табы
 
 const tabsParent = document.querySelector('.product-details');
 

@@ -24,22 +24,22 @@ const fileIncludeNotify = {
 	basepath: '@file',
 };
 
-const svgStack = {
-	mode: {
-		stack: {
-			example: true,
-		},
-	},
-	shape: {
-		transform: [
-			{
-				svgo: {
-					js2svg: { indent: 4, pretty: true },
-				},
-			},
-		],
-	},
-};
+// const svgStack = {
+// 	mode: {
+// 		stack: {
+// 			example: true,
+// 		},
+// 	},
+// 	shape: {
+// 		transform: [
+// 			{
+// 				svgo: {
+// 					js2svg: { indent: 4, pretty: true },
+// 				},
+// 			},
+// 		],
+// 	},
+// };
 
 const svgSymbol = {
 	mode: {

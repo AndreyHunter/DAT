@@ -6,7 +6,7 @@ import { choisesSettings } from './modules/choices.js';
 
 import { productsData } from './modules/server.js';
 
-import { getProducts } from './modules/utils.js';
+import {getProducts} from './modules/utils.js';
 import { createProductCard, createBasketItem } from './modules/render-products.js';
 
 import {
