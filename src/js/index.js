@@ -45,7 +45,6 @@ document.addEventListener('keydown', (e) => {
 	}
 });
 
-
 getProducts(productsData)
 	.then((response) => {
 		createProductCard(response.novetly, '#novetlySliderWrapper');

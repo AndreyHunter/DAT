@@ -172,7 +172,7 @@ export function renderProductImages(dataProductObj) {
 }
 
 export function renderProductInfo(dataProductObj) {
-	const { title, inStock, manufacturer, price, category } = dataProductObj;
+	const { title, mainTitle, inStock, manufacturer, price, category } = dataProductObj;
 
 	const productInfoRightWrapper = document.querySelector('.product-info__right');
 	const productTitle = productInfoRightWrapper.querySelector('.product-info__title');
@@ -182,20 +182,22 @@ export function renderProductInfo(dataProductObj) {
 	const productInfoPrice = productInfoRightWrapper.querySelector('.product-info__price strong');
 	const productInfoPriceFor = productInfoRightWrapper.querySelector('.price-for');
 
-	productTitle.textContent = title;
+	productTitle.textContent = mainTitle;
 	productManufacturerImage.setAttribute('src', manufacturer.image);
 	productManufacturerTitle.textContent = manufacturer.title;
 
 
 	if (category.link === 'seeds') {
-		productInfoPrice.textContent = `${calcSeedsTotalPrice(price, 50)} грн`;
 		productInfoPriceFor.textContent = `${price}грн/5шт`;
+		productInfoPrice.textContent = `${calcSeedsTotalPrice(price, 50)} грн`;
 		productInfoPrice.nextElementSibling.textContent = 'Ціна за 50 шт';
 	}
 
-	// if (category.link === 'plants-protection') {
-
-	// }
+	if (category.link === 'plants-protection') {
+		productInfoPriceFor.textContent = `${price}грн/2мл`;
+		productInfoPrice.textContent = `${price} грн`;
+		productInfoPrice.nextElementSibling.textContent = '';
+	}
     
 	if (inStock) {
 		productInStock.innerHTML +=  `

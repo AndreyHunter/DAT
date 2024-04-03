@@ -127,7 +127,12 @@ gulp.task('images:dev', function () {
 		gulp
 			.src('./src/images/**/*')
 			.pipe(changed('./build/images/'))
-			// .pipe(imagemin({verbose: true}))
+			.pipe(imagemin(
+				[
+					imagemin.mozjpeg({ quality: 85, progressive: true }),
+				],
+				{ verbose: true }
+			))
 			.pipe(gulp.dest('./build/images/'))
 	);
 });
