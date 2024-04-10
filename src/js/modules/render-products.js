@@ -1,9 +1,6 @@
-import { 
-	calculateTotalPriceForLiters,
-	calcSeedsTotalPrice
-} from './calculatePriceTotal';
+import { calculateTotalPriceForLiters, calcSeedsTotalPrice } from './calculatePriceTotal';
 
-export function createProductCard(data, selector) {
+const createProductCard = (data, selector) => {
 	const element = document.querySelector(selector);
 
 	for (let key of data) {
@@ -25,7 +22,7 @@ export function createProductCard(data, selector) {
                     <span class="product__card-stock ${!inStock ? 'inStock-finished' : ''}">${inStock ? 'В наявності' : 'Закінчився'}</span>
                     <span class="product__card-price">${price} грн</span>
                     <span class="product__card-quantity">1 шт</span>
-                    <div class="addToBasketBtn">
+                    <div class="addToBasketBtn" data-modal-open>
                         <svg class="basket-icon" width="16" height="16">
                             <use xlink:href="./images/svgsprite/sprite.symbol.svg#basket-icon"/>
                         </svg>
@@ -35,9 +32,9 @@ export function createProductCard(data, selector) {
             `;
 		element.insertAdjacentHTML('beforeend', novetlyCard);
 	}
-}
+};
 
-export function createBasketItem(array, selector) {
+const createBasketItem = (array, selector) => {
 	const element = document.querySelector(selector);
 
 	element.innerHTML = '';
@@ -86,9 +83,9 @@ export function createBasketItem(array, selector) {
             `;
 		element.insertAdjacentHTML('beforeend', basketCardHTML);
 	}
-}
+};
 
-function createSelect(options) {
+const createSelect = (options) => {
 	const select = document.createElement('select');
 	select.classList.add('basket__product-select', 'default');
 
@@ -106,20 +103,20 @@ function createSelect(options) {
 	});
 
 	return select.outerHTML;
-}
+};
 
 // Функции рендера страницы информации о продукте
 
-function getCategoryLink(category) {
+const getCategoryLink = (category) => {
 	return `./${category.link}.html`;
-}
+};
 
-function getSubCategoryLink(category) {
+const getSubCategoryLink = (category) => {
 	return `./${category.link}.html`;
-}
+};
 
-export function renderBreadCrambs(dataProductObj) {
-	const {category, subCategory, BreadCrambsTitle} = dataProductObj;
+const renderBreadCrambs = (dataProductObj) => {
+	const { category, subCategory, BreadCrambsTitle } = dataProductObj;
 
 	const breadCrambsHTML = `
             <ul class="breadcrumds">
@@ -129,39 +126,47 @@ export function renderBreadCrambs(dataProductObj) {
                 <li class="breadcrumbs__item">
                     <a href="./catalog.html" class="breadcrumbs__link">Каталог</a>
                 </li>
-                    ${category ? `
+                    ${
+						category
+							? `
                         <li class="breadcrumbs__item">
                             <a href="${getCategoryLink(category)}" class="breadcrumbs__link">${category.title}</a>
-                        </li>` : ''
-}
-                    ${subCategory ? `
+                        </li>`
+							: ''
+					}
+                    ${
+						subCategory
+							? `
                         <li class="breadcrumbs__item">
                             <a href="${getSubCategoryLink(subCategory)}" class="breadcrumbs__link">${subCategory ? subCategory.title : ''}</a>
-                        </li>` : ''
-}
+                        </li>`
+							: ''
+					}
                 <li class="breadcrumbs__item breadcrumbs__item-active">${BreadCrambsTitle}</li>
             </ul>
     `;
 
 	document.querySelector('main').insertAdjacentHTML('beforebegin', breadCrambsHTML);
-}
+};
 
-export function renderProductImages(dataProductObj) {
-	const {images, title, } = dataProductObj;
+const renderProductImages = (dataProductObj) => {
+	const { images, title } = dataProductObj;
 
 	if (!images || !images.length) {
 		return;
-	} 
+	}
 
 	const productSlider = document.querySelector('.product-slider-Body');
-	const productSubSlider = document.querySelector('#product-sub-slider .swiper-wrapper');
+	const productSubSlider = document.querySelector(
+		'#product-sub-slider .swiper-wrapper',
+	);
 
-	images.forEach(image => {
+	images.forEach((image) => {
 		const productSlideHTML = `
                 <div class="swiper-slide">
                     <img class="product-info__image" src="${image}" alt="${title}">
                 </div>`;
-		productSlider.insertAdjacentHTML('beforeend',productSlideHTML);
+		productSlider.insertAdjacentHTML('beforeend', productSlideHTML);
 
 		const productSubSlideHTML = `
                 <div class="swiper-slide">
@@ -169,23 +174,27 @@ export function renderProductImages(dataProductObj) {
                 </div>`;
 		productSubSlider.insertAdjacentHTML('beforeend', productSubSlideHTML);
 	});
-}
+};
 
-export function renderProductInfo(dataProductObj) {
+const renderProductInfo = (dataProductObj) => {
 	const { title, mainTitle, inStock, manufacturer, price, category } = dataProductObj;
 
 	const productInfoRightWrapper = document.querySelector('.product-info__right');
 	const productTitle = productInfoRightWrapper.querySelector('.product-info__title');
 	const productInStock = productInfoRightWrapper.querySelector('.inStock');
-	const productManufacturerImage = productInfoRightWrapper.querySelector('.basket__product-manufacturer-image');
-	const productManufacturerTitle =  productInfoRightWrapper.querySelector('.manufacturer__title');
-	const productInfoPrice = productInfoRightWrapper.querySelector('.product-info__price strong');
+	const productManufacturerImage = productInfoRightWrapper.querySelector(
+		'.basket__product-manufacturer-image',
+	);
+	const productManufacturerTitle =
+		productInfoRightWrapper.querySelector('.manufacturer__title');
+	const productInfoPrice = productInfoRightWrapper.querySelector(
+		'.product-info__price strong',
+	);
 	const productInfoPriceFor = productInfoRightWrapper.querySelector('.price-for');
 
 	productTitle.textContent = mainTitle;
 	productManufacturerImage.setAttribute('src', manufacturer.image);
 	productManufacturerTitle.textContent = manufacturer.title;
-
 
 	if (category.link === 'seeds') {
 		productInfoPriceFor.textContent = `${price}грн/5шт`;
@@ -198,9 +207,9 @@ export function renderProductInfo(dataProductObj) {
 		productInfoPrice.textContent = `${price} грн`;
 		productInfoPrice.nextElementSibling.textContent = '';
 	}
-    
+
 	if (inStock) {
-		productInStock.innerHTML +=  `
+		productInStock.innerHTML += `
             <svg class="icon inStock-icon">
                 <use href="./images/svgsprite/sprite.symbol.svg#check-in-stock-icon"></use>
             </svg>
@@ -209,24 +218,37 @@ export function renderProductInfo(dataProductObj) {
 	} else {
 		productInStock.innerHTML += 'Закінчився 😢';
 	}
-}
+};
 
-export function renderProductDescription(dataProductObj) {
-	const {title, desc, characteristics, recomendations, specifications} = dataProductObj;
+const renderProductDescription = (dataProductObj) => {
+	const { title, desc, characteristics, recomendations, specifications } =
+		dataProductObj;
 	const productTitle = document.querySelector('.product-details__title');
 	const productDetailsDesc = document.querySelector('.product-details__desc');
-	const productSpecifications = document.querySelector('.product-details__specifications');
-	const productCharacteristics = document.querySelector('.product-details__characteristics');
-	const productRecomendations = document.querySelector('.product-details__recomendation');
-	const productSpecificationsList = document.querySelector('.product-details__specifications-list');
-	const productCharacteristicsList = document.querySelector('.product-details__characteristics-list');
-	const productRecomendationsList = document.querySelector('.product-details__recomendation-list');
+	const productSpecifications = document.querySelector(
+		'.product-details__specifications',
+	);
+	const productCharacteristics = document.querySelector(
+		'.product-details__characteristics',
+	);
+	const productRecomendations = document.querySelector(
+		'.product-details__recomendation',
+	);
+	const productSpecificationsList = document.querySelector(
+		'.product-details__specifications-list',
+	);
+	const productCharacteristicsList = document.querySelector(
+		'.product-details__characteristics-list',
+	);
+	const productRecomendationsList = document.querySelector(
+		'.product-details__recomendation-list',
+	);
 
 	productTitle.textContent = title;
 	productDetailsDesc.textContent = desc;
-    
+
 	if (specifications) {
-		specifications.forEach(item => {
+		specifications.forEach((item) => {
 			const li = document.createElement('li');
 			li.classList.add('product-details__specifications-item');
 			li.innerHTML = `<strong class="desc-assent">${item.title}</strong> ${item.answer}`;
@@ -235,7 +257,7 @@ export function renderProductDescription(dataProductObj) {
 	}
 
 	if (characteristics) {
-		characteristics.forEach(item => {
+		characteristics.forEach((item) => {
 			const li = document.createElement('li');
 			li.classList.add('product-details__list-item');
 			li.innerHTML = item;
@@ -244,11 +266,20 @@ export function renderProductDescription(dataProductObj) {
 	}
 
 	if (recomendations) {
-		recomendations.forEach(item => {
+		recomendations.forEach((item) => {
 			const li = document.createElement('li');
 			li.classList.add('product-details__list-item');
 			li.innerHTML = item;
 			productRecomendationsList.append(li);
 		});
 	}
-}
+};
+
+export {
+	createProductCard,
+	createBasketItem,
+	renderBreadCrambs,
+	renderProductImages,
+	renderProductInfo,
+	renderProductDescription,
+};

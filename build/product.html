@@ -234,7 +234,7 @@
 						</a>
 					</div>
 
-					<div class="icon-circle icon-circle-user user-actions__basket">
+					<div class="icon-circle icon-circle-user user-actions__basket" data-modal-open>
 						<a href="#!" class="user-actions__link">
 							<svg class="icon basket-icon">
 								<use
@@ -681,14 +681,14 @@
 		</svg>
 	</a>
 </footer>
- <section class="basket hideModal">
+ <section class="basket">
 	<div class="basket__content">
 		<h2 class="basket__title section__title text-center">Кошик</h2>
 
 		<ul class="basket__list"></ul>
 
 		<div class="basket-buttons">
-			<a href="#!" class="btn continue-shopping-btn">
+			<a href="#!" class="btn continue-shopping-btn" data-modal-close>
 				<svg class="icon basket-icon basket-icon-orange">
 					<use href="../images/svgsprite/sprite.symbol.svg#basket-icon"></use>
 				</svg>
@@ -702,7 +702,7 @@
 			</a>
 		</div>
 
-		<button class="basket__closeBtn">
+		<button class="basket__closeBtn" data-modal-close>
 			<svg class="icon closeModal-icon">
 				<use href="./images/svgsprite/sprite.symbol.svg#closeBtn-icon"></use>
 			</svg>

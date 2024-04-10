@@ -1,14 +1,10 @@
 // eslint-disable-next-line no-unused-vars
-import Swiper from './modules/swiper.js';
-
+import { initialndexSliders } from './modules/swiper.js';
 import Choices from 'choices.js';
-import { choisesSettings } from './modules/choices.js';
-
+import choisesSettings from './modules/choices.js';
 import { productsData } from './modules/server.js';
-
-import {getProducts} from './modules/utils.js';
+import { getData } from './modules/utils.js';
 import { createProductCard, createBasketItem } from './modules/render-products.js';
-
 import {
 	getItem,
 	setItem,
@@ -17,42 +13,18 @@ import {
 	getProductsByIds,
 } from './modules/local-storage.js';
 
-import { openModal, closeModal } from './modules/modal.js';
+import { modals, openModal } from './modules/modals.js';
 
-// Закрытие и открытие модального окна корзины
-const basketBtn = document.querySelector('.user-actions__basket');
-basketBtn.onclick = () =>  openModal('.basket', '.basket__content');
+modals();
+initialndexSliders();
 
-window.addEventListener('click', (e) => {
-	const target = e.target;
-	const basketModal = document.querySelector('.basket');
-	const closeBtn = target.closest('.basket__closeBtn');
-	const continueBtn = target.closest('.continue-shopping-btn');
-
-	if (!basketModal.classList.contains('showModal')) return;
-
-	if (target.classList.contains('basket')) closeModal('.basket', '.basket__content');
-
-	if (closeBtn || continueBtn) closeModal('.basket', '.basket__content');
-});
-
-document.addEventListener('keydown', (e) => {
-	const basket = document.querySelector('.basket');
-	if (e.code === 'Escape' && basket.classList.contains('showModal')) {
-		closeModal('.basket', '.basket__content');
-	} else {
-		return;
-	}
-});
-
-getProducts(productsData)
+getData(productsData)
 	.then((response) => {
 		createProductCard(response.novetly, '#novetlySliderWrapper');
 		createProductCard(response.promotions, '#promotion-sliderWrapper');
 	})
 	.then(() => {
-		const basket = getItem();
-		getProductsByIds(basket, productsData)
+		getProductsByIds(getItem('basket'), productsData)
 			.then((products) => createBasketItem(products, '.basket__list'))
 			.then(() => {
 				const elements = document.querySelectorAll('.basket__product-select');
@@ -61,12 +33,10 @@ getProducts(productsData)
 			.catch((error) => console.error('Error:', error));
 	})
 	.then(() => updateBasketLenght())
-	.then(() => updateBasketBgColor(getItem()))
+	.then(() => updateBasketBgColor(getItem('basket')))
 	.catch((err) => console.error('Something went wrong', err));
 
-window.addEventListener('click', addToBasket);
-
-async function addToBasket(e) {
+const addToBasket = async (e) => {
 	const targetButton = e.target.closest('.addToBasketBtn');
 	if (!targetButton) return;
 
@@ -75,7 +45,7 @@ async function addToBasket(e) {
 
 	const id = card.dataset.productid;
 
-	let basket = getItem();
+	let basket = getItem('basket');
 
 	if (!Array.isArray(basket)) {
 		basket = [];
@@ -86,13 +56,15 @@ async function addToBasket(e) {
 		basket.splice(index, 1);
 	} else {
 		basket.push(id);
-		openModal('.basket', '.basket__content');
+		openModal('.basket', '.basket__content', 'showModal', 'showModal-scale');
 	}
 
-	setItem(basket);
+	setItem('basket', basket);
 	updateBasketBgColor(basket);
 	const basketArray = await getProductsByIds(basket, productsData);
 	createBasketItem(basketArray, '.basket__list');
 	const elements = document.querySelectorAll('.basket__product-select');
 	elements.forEach((select) => new Choices(select, choisesSettings));
-}
+};
+
+window.addEventListener('click', addToBasket);

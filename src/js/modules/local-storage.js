@@ -1,21 +1,21 @@
-export function getItem() {
-	const basketDataJson = localStorage.getItem('basket');
+const getItem = (key) => {
+	const basketDataJson = localStorage.getItem(key);
 	return basketDataJson ? JSON.parse(basketDataJson) : [];
-}
+};
 
-export function setItem(cardId) {
+const setItem = (key, value) => {
 	const basketLength = document.querySelector('.basket-lenght');
-	localStorage.setItem('basket', JSON.stringify(cardId));
-	basketLength.textContent = cardId.length;
-}
+	localStorage.setItem(key, JSON.stringify(value));
+	basketLength.textContent = value.length;
+};
 
-export function updateBasketLenght() {
+const updateBasketLenght = () => {
 	const basketLengthElement = document.querySelector('.basket-lenght');
-	const basketLength = getItem();
+	const basketLength = getItem('basket');
 	basketLengthElement.textContent = basketLength.length;
-}
+};
 
-export function updateBasketBgColor(basket) {
+const updateBasketBgColor = (basket) => {
 	const basketButtons = document.querySelectorAll('.addToBasketBtn');
 
 	basketButtons.forEach((btn) => {
@@ -34,9 +34,9 @@ export function updateBasketBgColor(basket) {
 			svg.classList.remove('active');
 		}
 	});
-}
+};
 
-export async function getProductsByIds(ids, url) {
+const getProductsByIds = async (ids, url) => {
 	const numbersId = ids.map((item) => parseInt(item));
 
 	try {
@@ -60,4 +60,6 @@ export async function getProductsByIds(ids, url) {
 		console.error('Error:', error);
 		return [];
 	}
-}
+};
+
+export { getItem, setItem, updateBasketLenght, updateBasketBgColor, getProductsByIds };
