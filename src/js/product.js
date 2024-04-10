@@ -1,8 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable no-unused-vars */
 import { initialProductSlider } from './modules/swiper.js';
-import Choices from 'choices.js';
-import choisesSettings from './modules/choices.js';
+import initialChoises from './modules/choices.js';
 import { productsData } from './modules/server.js';
 import { getData } from './modules/utils.js';
 import {
@@ -11,12 +10,12 @@ import {
 	renderBreadCrambs,
 	renderProductInfo,
 	renderProductDescription,
-} from './modules/render-products.js';
-import {
-	getItem,
-	setItem,
 	updateBasketLenght,
 	getProductsByIds,
+} from './modules/render.js';
+import {
+	getItem,
+	setItem
 } from './modules/local-storage.js';
 
 import { modals } from './modules/modals.js';
@@ -40,15 +39,15 @@ let produtsArray = [];
 getProductsByIds(getItem('basket'), productsData)
 	.then((res) => createBasketItem(res, '.basket__list'))
 	.then(() => updateBasketLenght())
-	.then(() => {
-		const elements = document.querySelectorAll('.basket__product-select');
-		elements.forEach((select) => new Choices(select, choisesSettings));
-	});
+	.then(() => initialChoises('.basket__product-select'))
+	.catch((err) => console.error('Something went wrong', err));
+
 
 // Получение продуктов
 getData(productsData)
 	.then((res) => (produtsArray = [...res.novetly, ...res.promotions]))
-	.then(() => loadProductDetails(produtsArray));
+	.then(() => loadProductDetails(produtsArray))
+	.catch((err) => console.error('Something went wrong', err));
 
 const loadProductDetails = (data) => {
 	if (!data || !data.length) return;

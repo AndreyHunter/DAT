@@ -1,3 +1,45 @@
+const isScrollbarVisible = () => {
+	return document.documentElement.scrollHeight > window.innerHeight;
+};
+
+const openModal = (modalOverlay, modalBody, modalOverlayClass, modalBodyClass) => {
+	const modal = document.querySelector(modalOverlay);
+	const modalContent = document.querySelector(modalBody);
+	modal.classList.add(modalOverlayClass);
+	modalContent.classList.add(modalBodyClass);
+	if (isScrollbarVisible()) {
+		toggleBodyOverflow();
+	}
+};
+
+const closeModal = (modalOverlay, modalBody, modalOverlayClass, modalBodyClass) => {
+	const modal = document.querySelector(modalOverlay);
+	const modalContent = document.querySelector(modalBody);
+	modal.classList.remove(modalOverlayClass);
+	modalContent.classList.remove(modalBodyClass);
+
+	if (isScrollbarVisible()) {
+		toggleBodyOverflow();
+	}
+};
+
+const toggleBodyOverflow = () => {
+	document.body.style.overflow = document.body.style.overflow === '' ? 'hidden' : '';
+	const scrollBarWidth = getScrollBarWidth();
+	document.documentElement.style.paddingRight =
+	document.body.style.overflow === 'hidden' ? scrollBarWidth + 'px' : '';
+};
+
+const getScrollBarWidth = () => {
+	const div = document.createElement('div');
+	div.style.overflow = 'scroll';
+	div.style.visibility = 'hidden';
+	document.body.append(div);
+	const scrollBarWidth = div.offsetWidth - div.clientWidth;
+	document.body.removeChild(div);
+	return scrollBarWidth;
+};
+
 const bindModal = ({
 	triggerButton,
 	modalOverlay,
@@ -36,16 +78,6 @@ const bindModal = ({
 		});
 	}
 
-	if (closeOnKey) {
-		document.addEventListener('keydown', (e) => closeModalOnKey(e));
-	}
-
-	if (openOntimeDelay) {
-		setTimeout(() => {
-			openModal(modalOverlay, modalBody, modalOverlayClass, modalClass);
-		}, openOntimeDelay);
-	}
-
 	const closeModalOnKey = (e) => {
 		const code = e.code;
 
@@ -55,6 +87,16 @@ const bindModal = ({
 			return;
 		}
 	};
+
+	if (closeOnKey) {
+		document.addEventListener('keydown', (e) => closeModalOnKey(e));
+	}
+
+	if (openOntimeDelay) {
+		setTimeout(() => {
+			openModal(modalOverlay, modalBody, modalOverlayClass, modalClass);
+		}, openOntimeDelay);
+	}
 };
 
 const modals = () => {
@@ -71,18 +113,5 @@ const modals = () => {
 	});
 };
 
-const openModal = (modalOverlay, modalBody, modalOverlayClass, modalBodyClass) => {
-	const modal = document.querySelector(modalOverlay);
-	const modalContent = document.querySelector(modalBody);
-	modal.classList.add(modalOverlayClass);
-	modalContent.classList.add(modalBodyClass);
-};
-
-const closeModal = (modalOverlay, modalBody, modalOverlayClass, modalBodyClass) => {
-	const modal = document.querySelector(modalOverlay);
-	const modalContent = document.querySelector(modalBody);
-	modal.classList.remove(modalOverlayClass);
-	modalContent.classList.remove(modalBodyClass);
-};
 
 export { modals, openModal, closeModal };
