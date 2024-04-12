@@ -338,5 +338,5 @@ export {
 	renderProductDescription,
 	updateBasketLenght,
 	updateBasketBgColor,
-	getProductsByIds
+	getProductsByIds,
 };

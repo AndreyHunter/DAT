@@ -1,0 +1,20 @@
+.header-index-bg {
+	background: url(https://i.ibb.co/fHfQ3Qc/index-bg.png) no-repeat 100% 100%;
+	background-size: cover;
+	min-height: 100vh;
+	position: relative;  
+}
+
+.ellipse-header {
+	width: 500px;
+	height: 500px;
+	filter: blur(3.75rem);
+	background: radial-gradient(
+		50% 50% at 50% 50%,
+		rgba(231, 78, 19, 0.1),
+		rgba(231, 78, 19, 0) 100%
+	);
+	position: absolute;
+	top: -170px;
+	right: -50px;
+}

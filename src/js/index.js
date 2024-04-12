@@ -1,23 +1,26 @@
 // eslint-disable-next-line no-unused-vars
 import { initialndexSliders } from './modules/swiper.js';
-import initialChoises from './modules/choices.js';
+import {initialChoises, choisesMenu} from './modules/choices.js';
 import { productsData } from './modules/server.js';
 import { getData } from './modules/utils.js';
-import { 
+import {
 	createProductCard,
 	createBasketItem,
 	updateBasketLenght,
 	updateBasketBgColor,
-	getProductsByIds, } from './modules/render.js';
-import {
-	getItem,
-	setItem
-} from './modules/local-storage.js';
+	getProductsByIds,
+} from './modules/render.js';
+import { getItem, setItem } from './modules/local-storage.js';
 
 import { modals, openModal } from './modules/modals.js';
+import openMobileMenu from './modules/mobile-menu.js';
 
 modals();
 initialndexSliders();
+openMobileMenu('#nav-icon2', '.mobile-nav', 'open', 'active');
+choisesMenu();
+
+
 
 // Рендер продуктов
 getData(productsData)

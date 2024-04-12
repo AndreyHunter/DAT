@@ -13,10 +13,7 @@ import {
 	updateBasketLenght,
 	getProductsByIds,
 } from './modules/render.js';
-import {
-	getItem,
-	setItem
-} from './modules/local-storage.js';
+import { getItem, setItem } from './modules/local-storage.js';
 
 import { modals } from './modules/modals.js';
 import tabs from './modules/tabs.js';
@@ -41,7 +38,6 @@ getProductsByIds(getItem('basket'), productsData)
 	.then(() => updateBasketLenght())
 	.then(() => initialChoises('.basket__product-select'))
 	.catch((err) => console.error('Something went wrong', err));
-
 
 // Получение продуктов
 getData(productsData)

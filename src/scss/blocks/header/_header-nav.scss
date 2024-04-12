@@ -1,0 +1,139 @@
+.header__nav {
+	width: 100%;
+	background-color: var(--headerBg-color);
+}
+
+.header__nav-content {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+    min-height: 50px;
+}
+
+.header__nav-list {
+	display: flex;
+	gap: 40px;
+}
+
+.header__nav-item {
+	position: relative;
+}
+
+.header__nav-link {
+	display: block;
+	color: var(--link-color);
+	font-size: var(--header-nav-link-size);
+	font-weight: 300;
+	padding-block: 15px;
+
+	&:hover {
+		color: #dbdbdb;
+		background-color: #347153;
+	}
+}
+
+.about-link::before {
+	content: '';
+	position: absolute;
+	top: 50%;
+	left: 112%;
+	transform: translateY(-50%);
+	transition: 0.2s ease-in-out;
+	background: url(../images/svgicons/arrow-down.svg);
+	width: 12px;
+	height: 12px;
+}
+
+.header__nav-sub-list {
+	visibility: hidden;
+	opacity: 0;
+	position: absolute;
+	width: 221px;
+	min-height: 133px;
+	background-color: #347153;
+	padding: 15px 20px 18px 12px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	transition: 0.2s ease-in-out;
+
+	&-item:not(:last-child) {
+		margin-bottom: 20px;
+	}
+
+	&-link {
+		color: var(--link-color);
+
+		&:hover {
+			color: var(--link-color-hover);
+		}
+	}
+}
+
+.header__nav-list li:hover .header__nav-sub-list {
+	visibility: visible;
+	opacity: 1;
+}
+
+.header__nav-list li:hover .about-link {
+	background-color: #347153;
+}
+
+.header__nav-list li:hover .about-link::before {
+	transform: rotate(180deg) translateY(4px);
+}
+
+.header__nav-separator {
+	width: 1px;
+	min-height: 50px;
+	background: rgba(255, 255, 255, 0.2);
+}
+
+.header__top-reg {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	color: white;
+	font-size: 1rem;
+	font-weight: 300;
+
+	&:hover {
+		color: #dbdbdb;
+	}
+}
+
+.news-link {
+    display: none;
+}
+
+[data-mobilebtn] {
+    display: none;
+}
+
+@media (max-width:1024px) {
+    .header__nav-item:nth-child(4) {
+        display: none;
+    }
+
+    .news-link {
+        display: block;
+    }
+}
+
+@media (max-width:968px) {
+    .header__nav-list {
+        display: none;
+    }
+
+    .header__nav-content {
+        padding: 10px 0;
+    }
+
+    .header__nav-separator {
+        display: none;
+    }
+
+    [data-mobilebtn] {
+        display: block;
+    }
+}
