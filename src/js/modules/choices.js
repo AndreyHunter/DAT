@@ -17,15 +17,16 @@ const choisesMenu = () => {
 		choicesInstance = new Choices('.header__select', choisesSettings);
 	}
 
-	// Обновление экземпляра при изменении размера окна
 	window.addEventListener('resize', () => {
 		if (window.innerWidth < 450) {
 			if (!choicesInstance) {
 				choicesInstance = new Choices('.header__select', choisesSettings);
 			}
 		} else {
-			choicesInstance.destroy();
-			choicesInstance = null;
+			if (choicesInstance) {
+				choicesInstance.destroy();
+				choicesInstance = null;
+			}
 		}
 	});
 };

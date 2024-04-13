@@ -11,9 +11,32 @@ const commonSwiperOptions = {
 	observeSlideChildren: true,
 };
 
+const commonSwiperBreakpoints = {
+	breakpoints: {
+		1280: {
+			slidesPerView: 4,
+			spaceBetween: 30,
+		},
+		770: {
+			slidesPerView: 3,
+			spaceBetween: 30,
+		},
+		550: {
+			slidesPerView: 2,
+			spaceBetween: 30,
+		},
+		0: {
+			slidesPerView: 1,
+			spaceBetween: 30,
+		},
+	}
+};
+
 const initialndexSliders = () => {
-	new Swiper('#novetlySlider', {
+
+	const novetlySwiper = new Swiper('#novetlySlider', {
 		...commonSwiperOptions,
+		...commonSwiperBreakpoints,
 		slidesPerView: 4,
 		spaceBetween: 30,
 		speed: 400,
@@ -27,8 +50,9 @@ const initialndexSliders = () => {
 		},
 	});
 
-	new Swiper('#promotion__slider', {
+	const promotionSwiper = new Swiper('#promotion__slider', {
 		...commonSwiperOptions,
+		...commonSwiperBreakpoints,
 		slidesPerView: 4,
 		spaceBetween: 30,
 		speed: 400,
@@ -42,8 +66,9 @@ const initialndexSliders = () => {
 		},
 	});
 
-	new Swiper('#partners__slider', {
+	const partnersSwiper = new Swiper('#partners__slider', {
 		...commonSwiperOptions,
+		...commonSwiperBreakpoints,
 		slidesPerView: 4,
 		spaceBetween: 30,
 		speed: 400,
@@ -56,9 +81,24 @@ const initialndexSliders = () => {
 			nextEl: '.next-3',
 		},
 	});
+
+
+	const updateTouchMoveOption = () => {
+		const isTouchMoveAllowed = window.innerWidth <= 1030;
+		if (isTouchMoveAllowed) {
+			novetlySwiper.allowTouchMove = true;
+			promotionSwiper.allowTouchMove = true;
+			partnersSwiper.allowTouchMove = true;
+		}
+	};
+
+	updateTouchMoveOption();
+
+	window.addEventListener('resize', updateTouchMoveOption);
 };
 
 const initialProductSlider = () => {
+
 	const productSubSlider = new Swiper('#product-sub-slider', {
 		...commonSwiperOptions,
 		slidesPerView: 3,

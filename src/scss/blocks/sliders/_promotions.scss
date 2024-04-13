@@ -1,9 +1,13 @@
 .promotion {
 	position: relative;
-	padding-top: 112px;
+	padding: 100px 0 100px 0;
 	max-width: 100%;
-	min-height: 835px;
 	background-color: var(--promotions-bg);
+
+    @media (max-width: 968px) {
+        padding: 60px 0 60px 0;
+    }
+
 
 	&__title {
 		margin-bottom: 39px;
@@ -17,14 +21,6 @@
 
 .promotion__slider {
 	position: relative;
-}
-
-.next-2 {
-	right: -100px;
-}
-
-.prev-2 {
-	left: -100px;
 }
 
 .promotion__slider-bullet {

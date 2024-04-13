@@ -27,7 +27,7 @@ const toggleBodyOverflow = () => {
 	document.body.style.overflow = document.body.style.overflow === '' ? 'hidden' : '';
 	const scrollBarWidth = getScrollBarWidth();
 	document.documentElement.style.paddingRight =
-		document.body.style.overflow === 'hidden' ? scrollBarWidth + 'px' : '';
+	document.body.style.overflow === 'hidden' ? scrollBarWidth + 'px' : '';
 };
 
 const getScrollBarWidth = () => {

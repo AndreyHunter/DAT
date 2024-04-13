@@ -1,6 +1,10 @@
 .novetly {
 	position: relative;
-	padding-bottom: 120px;
+	padding-bottom: 100px;
+
+    @media (max-width: 968px) {
+        padding-bottom: 60px;
+    }
 
 	&__title {
 		margin-bottom: 39px;
@@ -9,14 +13,6 @@
 
 .novetly__slider {
 	position: relative;
-}
-
-.prev {
-	left: -100px;
-}
-
-.next {
-	right: -100px;
 }
 
 .ellipse-novetly {

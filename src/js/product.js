@@ -1,7 +1,7 @@
 /* eslint-disable no-mixed-spaces-and-tabs */
 /* eslint-disable no-unused-vars */
 import { initialProductSlider } from './modules/swiper.js';
-import initialChoises from './modules/choices.js';
+import {initialChoises} from './modules/choices.js';
 import { productsData } from './modules/server.js';
 import { getData } from './modules/utils.js';
 import {

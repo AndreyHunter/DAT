@@ -29,7 +29,12 @@
 	}
 }
 
+.main-prev {
+    left: -100px;
+}
+
 .main-next {
+    right: -100px;
 	svg {
 		transform: rotate(180deg);
 	}
@@ -48,4 +53,23 @@
 	&-active {
 		height: 25px;
 	}
+}
+
+@media(max-width: 1440px) {
+    .main-prev {
+        left: 0;
+        margin-left: 10px;
+    }
+
+    .main-next {
+        right: 0;
+        margin-right: 10px;
+    }
+}
+
+@media(max-width: 768px) {
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: none;
+    }
 }

@@ -72,6 +72,10 @@ pre.code {
 		bottom: 0;
 		transform: rotateX(180deg) translate(12px, 50%);
 	}
+
+    @media(max-width: 768px) {
+        font-size: 2.2rem;
+    }
 }
 
 .desc-assent {

@@ -1,7 +1,12 @@
 .seeds {
 	min-height: 624px;
-	padding: 109px 0 120px 0;
+	padding: 100px 0 100px 0;
 	position: relative;
+
+    @media (max-width: 968px) {
+        padding: 60px 0 60px 0;
+    }
+
 
 	&::before {
 		content: '';

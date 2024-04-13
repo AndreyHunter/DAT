@@ -20,8 +20,6 @@ initialndexSliders();
 openMobileMenu('#nav-icon2', '.mobile-nav', 'open', 'active');
 choisesMenu();
 
-
-
 // Рендер продуктов
 getData(productsData)
 	.then((response) => {
@@ -69,3 +67,4 @@ const addToBasket = async (e) => {
 };
 
 window.addEventListener('click', addToBasket);
+
