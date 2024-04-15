@@ -3,6 +3,14 @@
 
 	&__title {
 		margin-bottom: 21px;
+
+        @media(max-width: 600px) {
+            font-size: 2rem;
+        }
+
+        @media(max-width: 460px) {
+            font-size: 1.7rem;
+        }
 	}
 
 	&__text {
@@ -31,11 +39,19 @@
 	&__title {
 		font-size: 1.88rem;
 		margin-bottom: 12px;
+
+        @media(max-width: 600px) {
+            font-size: 1.3rem;
+        }
 	}
 
 	&__desc {
 		font-size: 1.13rem;
 		margin-bottom: 15px;
+
+        @media(max-width: 600px) {
+            font-size: 1rem;
+        }
 	}
 
 	&__list {
@@ -99,3 +115,5 @@
 		transform: translateY(1.6px);
 	}
 }
+
+

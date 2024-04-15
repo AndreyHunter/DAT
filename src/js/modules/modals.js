@@ -109,7 +109,7 @@ const modals = () => {
 		closeButton: '[data-modal-close]',
 		closeOnOutside: true,
 		closeOnKey: true,
-		openOntimeDelay: 60000,
+		openOntimeDelay: false,
 	});
 };
 

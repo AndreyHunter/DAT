@@ -29,6 +29,7 @@ const choisesMenu = () => {
 			}
 		}
 	});
+
 };
 
 export {initialChoises, choisesMenu};

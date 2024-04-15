@@ -6,17 +6,14 @@
     }
 
     &__cards {
-		display: flex;
-		justify-content: center;
-		flex-wrap: wrap;
-        flex-wrap: wrap;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 		column-gap: 30px;
 		row-gap: 26px;
 	}
 
 	&__card {
-		width: 30%;
-        height: 250px;
+        height: 240px;
 		position: relative;
 	}
 
@@ -50,3 +47,4 @@
 		font-weight: 600;
 	}
 }
+
