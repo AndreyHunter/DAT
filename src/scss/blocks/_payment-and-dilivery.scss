@@ -3,14 +3,6 @@
 
 	&__title {
 		margin-bottom: 21px;
-
-        @media(max-width: 600px) {
-            font-size: 2rem;
-        }
-
-        @media(max-width: 460px) {
-            font-size: 1.7rem;
-        }
 	}
 
 	&__text {
@@ -81,8 +73,14 @@
 	}
 	&__item {
 		display: flex;
+        justify-content: space-between;
 		gap: 30px;
 	}
+
+    &__item-content {
+        width: 40%;
+        flex-shrink: 0;
+    }
 
 	&__item-title {
 		font-size: 1.13rem;
@@ -90,9 +88,13 @@
 	}
 
 	&__item-image {
+        width: 50%;
+        object-fit: contain;
 		border-radius: 5px;
 	}
 }
+
+
 
 .pickup {
 	&__tilte {
@@ -117,3 +119,23 @@
 }
 
 
+@media(max-width: 968px) {
+    .dilivery__item {
+        flex-wrap: wrap;
+    }
+
+    .dilivery__item-content {
+        width: 100%;
+    }
+
+    .dilivery__item-image {
+        order: -1;
+        width: 80%;
+    }
+}
+
+@media(max-width: 580px) {
+    .dilivery__item-image {
+        width: auto;
+    }
+}

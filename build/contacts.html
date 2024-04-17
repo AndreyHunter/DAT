@@ -388,132 +388,132 @@
 
 			<div class="contacts__divider"></div>
 
-			<div class="contacts__down">
-				<strong class="contacts__down-title"
+            <strong class="contacts__text-title"
 					>Відділ продажу та агрономічного супроводу</strong
 				>
-				<p class="contacts__down-desc">
+				<p class="contacts__text-desc">
 					Якщо Вам потрібна допомога при оформленні замовлення, консультація по
 					використанню товарів, є питання що до Ваших замовлень звертайтеся
 					сюди:
 				</p>
 
-				<div class="contacts__down-item-wrapper">
-					<div class="contacts__item">
-						<div class="icon-circle">
-							<svg class="icon schedule-icon">
-								<use
-									href="./images/svgsprite/sprite.symbol.svg#schedule-icon"
-								></use>
-							</svg>
-						</div>
-						<p class="contacts-item-text">
-							<strong>Пн-Нд</strong> <br />
-							з 9.00 до 17.00
-						</p>
-					</div>
+			<div class="contacts__down">
+                 <div class="contacts__item">
+                    <div class="icon-circle">
+                        <svg class="icon schedule-icon">
+                            <use
+                                href="./images/svgsprite/sprite.symbol.svg#schedule-icon"
+                            ></use>
+                        </svg>
+                    </div>
+                    <p class="contacts-item-text">
+                        <strong>Пн-Нд</strong> <br />
+                        з 9.00 до 17.00
+                    </p>
+                </div>
 
-					<div class="contacts__phones">
-						<div class="contacts__item">
-							<div class="icon-circle">
-								<svg class="icon phone-icon">
-									<use
-										href="./images/svgsprite/sprite.symbol.svg#phone-icon"
-									></use>
-								</svg>
-							</div>
-							<p class="contacts__item-text">
-								(050) 42-42-820
-								<br />
-								(050) 42-42-824
-							</p>
-						</div>
-						<div class="contacts__item">
-							<div class="icon-circle">
-								<svg class="icon phone-icon">
-									<use
-										href="./images/svgsprite/sprite.symbol.svg#phone-icon"
-									></use>
-								</svg>
-							</div>
-							<p class="contacts-item-text">
-								(097) 182-51-41
-								<br />
-								(098) 123-70-00
-							</p>
-						</div>
-					</div>
-				</div>
+                <div class="contacts__phones">
+                    <div class="contacts__item">
+                        <div class="icon-circle">
+                            <svg class="icon phone-icon">
+                                <use
+                                    href="./images/svgsprite/sprite.symbol.svg#phone-icon"
+                                ></use>
+                            </svg>
+                        </div>
+                        <p class="contacts__item-text">
+                            (050) 42-42-820
+                            <br />
+                            (050) 42-42-824
+                        </p>
+                    </div>
+                    <div class="contacts__item">
+                        <div class="icon-circle">
+                            <svg class="icon phone-icon">
+                                <use
+                                    href="./images/svgsprite/sprite.symbol.svg#phone-icon"
+                                ></use>
+                            </svg>
+                        </div>
+                        <p class="contacts-item-text">
+                            (097) 182-51-41
+                            <br />
+                            (098) 123-70-00
+                        </p>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
 </section>
- <div class="contacts__form">
+ 
+            <div class="contacts-form">
 	<div class="container">
-		<h2 class="contacts__form-title section__title text-center">
+		<h2 class="contacts-form__title section__title text-center">
 			Напишіть нам
 		</h2>
-		<p class="contacts__form-desc text-center">
+		<p class="contacts-form__desc text-center">
 			Введіть ваші контактні дані і текст повідомлення, якщо у вас виникли
 			питання або пропозиції, і ми найближчим часом відповімо вам.
 		</p>
 
-		<form action="!#" class="contacts__form-body" id="contacts__form">
-			<div class="contacts__form-inputs">
+		<form action="!#" class="contacts-form__body" id="contacts-form">
+			<div class="contacts-form__inputs">
 				<div class="input__wrapper">
 					<input
 						type="text"
-						class="contacts__form-input"
+						class="contacts-form__input"
 						placeholder="Ім’я"
 						id="name"
+                        name="name"
 					/>
-					<span class="inputError" id="nameError"></span>
 				</div>
 
 				<div class="input__wrapper">
 					<input
 						type="text"
-						class="contacts__form-input"
+						class="contacts-form__input"
 						placeholder="Фамілія"
 						id="lastName"
+                        name="lastName"
 					/>
-					<span class="inputError" id="lastNameError"></span>
 				</div>
 
 				<div class="input__wrapper">
 					<input
 						type="tel"
-						class="phoneInput contacts__form-input"
+						class="phoneInput contacts-form__input"
 						placeholder="Телефон"
 						id="phone"
+                        name="phone"
 					/>
-					<span class="inputError" id="phoneError"></span>
 				</div>
 
 				<div class="input__wrapper">
 					<input
 						type="email"
-						class="contacts__form-input"
+						class="contacts-form__input"
 						placeholder="E-mail"
 						id="email"
+                        name="email"
 					/>
-					<span class="inputError" id="emailError"></span>
 				</div>
 			</div>
 
-			<div class="contacts__form-message">
+			<div class="contacts-form__message">
 				<input
 					type="text"
-					class="contacts__form-input-message"
+					class="contacts-form__input-message"
 					placeholder="Ваше повідомлення"
 					id="message"
+                    name="message"
 				/>
 			</div>
 
 			<button
 				type="submit"
-				class="contacts__form-button btn btn-assent"
-				id="contacts__form-button"
+				class="contacts-form__button btn btn-assent"
+				id="contacts-form-button"
 			>
 				Відправити
 			</button>
@@ -522,6 +522,32 @@
 </div>
 
 		</main>
+
+        <div class="contacts-modal" id="contacts-modal">
+    <div class="contacts-modal__content">
+        <div class="contacts-modal__header">
+            <h3 class="contacts-modal__title">
+                Дякуємо за відправку форми!
+            </h3>
+            <div class="contacts-modal__close" data-modal-close>
+                &#x2715;
+            </div>
+        </div>
+        <div class="contacts-modal__body">
+            <div class="contacts-modal__text">
+                Скоро наш менеджер з вами зв'яжеться!
+            </div>
+            <div class="contacts-modal__image-wrapper">
+                <img 
+                    src="https://i.pinimg.com/736x/11/13/f6/1113f62b818e33f88264df5494694b1a.jpg" 
+                    alt="cat-image" 
+                    class="contacts-modal__image"
+                >
+            </div>
+        </div>
+    </div>
+</div>
+
 		<footer class="footer">
 	<div class="container">
 		<div class="footer__content">
@@ -733,5 +759,7 @@
 	</a>
 </footer>
 
+
+        <script src="./js/contacts.bundle.js" type="module" defer></script>
 	</body>
 </html>

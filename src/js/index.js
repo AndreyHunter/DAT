@@ -6,11 +6,13 @@ import { getData } from './modules/utils.js';
 import {
 	createProductCard,
 	createBasketItem,
+} from './modules/render.js';
+import { getItem, setItem } from './modules/local-storage.js';
+import {
 	updateBasketLenght,
 	updateBasketBgColor,
 	getProductsByIds,
-} from './modules/render.js';
-import { getItem, setItem } from './modules/local-storage.js';
+} from './modules/basket.js';
 
 import { modals, openModal } from './modules/modals.js';
 import openMobileMenu from './modules/mobile-menu.js';
@@ -26,8 +28,10 @@ getData(productsData)
 		createProductCard(response.novetly, '#novetlySliderWrapper');
 		createProductCard(response.promotions, '#promotion-sliderWrapper');
 	})
-	.then(() => updateBasketLenght())
-	.then(() => updateBasketBgColor(getItem('basket')))
+	.then(() => {
+		updateBasketLenght();
+		updateBasketBgColor(getItem('basket'));
+	})
 	.catch((err) => console.error('Something went wrong', err));
 
 // Рендер корзины
@@ -67,4 +71,3 @@ const addToBasket = async (e) => {
 };
 
 window.addEventListener('click', addToBasket);
-

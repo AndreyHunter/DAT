@@ -4,22 +4,25 @@ import { initialProductSlider } from './modules/swiper.js';
 import {initialChoises} from './modules/choices.js';
 import { productsData } from './modules/server.js';
 import { getData } from './modules/utils.js';
+import { getItem, setItem } from './modules/local-storage.js';
+
+import {
+	updateBasketLenght,
+	getProductsByIds,
+} from './modules/basket.js';
+
 import {
 	createBasketItem,
 	renderProductImages,
 	renderBreadCrambs,
 	renderProductInfo,
-	renderProductDescription,
-	updateBasketLenght,
-	getProductsByIds,
+	renderProductDescription
 } from './modules/render.js';
-import { getItem, setItem } from './modules/local-storage.js';
 
 import { modals } from './modules/modals.js';
 import tabs from './modules/tabs.js';
-modals();
 
-initialProductSlider();
+modals();
 
 tabs({
 	wrapperSelector: '.product-details',
@@ -29,6 +32,8 @@ tabs({
 	contentActiveClass: 'active',
 	initialContentIndex: 0,
 });
+
+initialProductSlider();
 
 let produtsArray = [];
 

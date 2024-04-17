@@ -84,3 +84,7 @@
 	background: var(--bg-dark);
 	color: var(--text-color);
 }
+
+:root {
+    --main-transition: .1s ease-in-out;
+}

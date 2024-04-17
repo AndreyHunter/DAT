@@ -113,4 +113,18 @@ const modals = () => {
 	});
 };
 
-export { modals, openModal, closeModal };
+const contactsModals = () => {
+	bindModal({
+		triggerButton: null,
+		modalOverlay: '#contacts-modal',
+		modalBody: '.contacts-modal__content',
+		modalOverlayClass: 'showModal',
+		modalClass: 'showModal-scale',
+		closeButton: '[data-modal-close]',
+		closeOnOutside: true,
+		closeOnKey: true,
+		openOntimeDelay: false,
+	});
+};
+
+export { modals, openModal, closeModal, contactsModals };

@@ -10,5 +10,9 @@ async function getData(url) {
 		console.error('Network err', err);
 	}
 }
+
+const transformFormData = (formData) => {
+	return Object.fromEntries(formData.entries());
+};
     
-export { getData };
+export { getData, transformFormData};
