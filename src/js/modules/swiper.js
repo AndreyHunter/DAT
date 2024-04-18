@@ -119,4 +119,8 @@ const initialProductSlider = () => {
 	});
 };
 
-export { initialndexSliders, initialProductSlider };
+
+export { 
+	initialndexSliders,
+	initialProductSlider,
+};

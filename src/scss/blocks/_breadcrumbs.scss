@@ -1,3 +1,8 @@
+.breadcrambs-swiper {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
 .breadcrumds {
 	margin-top: 50px;
 	margin-bottom: 8px;
@@ -5,6 +10,14 @@
 	justify-content: center;
 	align-items: center;
 	gap: 30px;
+
+    @media (max-width: 768px) {
+        margin-top: 20px;
+    }
+
+    @media (max-width: 568px) {
+        margin: 10px 0;
+    }
 }
 
 .breadcrumbs__item {

@@ -1,6 +1,7 @@
 const config = {
 	mode: 'production',
 	entry: {
+		main: './src/js/main.js',
 		index: './src/js/index.js',
 		product: './src/js/product.js',
 		contacts: './src/js/contacts.js'

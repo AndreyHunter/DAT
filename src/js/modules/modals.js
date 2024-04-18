@@ -49,18 +49,23 @@ const bindModal = ({
 	closeButton,
 	closeOnOutside = true,
 	closeOnKey = true,
-	openOntimeDelay = 10000,
+	openOntime = false,
+	openOntimeDelay = 4000
 }) => {
 	const modal = document.querySelector(modalOverlay);
-	const triggerButtons = document.querySelectorAll(triggerButton);
-	const closeButtons = document.querySelectorAll(closeButton);
-
-	triggerButtons.forEach((btn) => {
-		btn.addEventListener('click', (e) => {
-			e.preventDefault();
-			openModal(modalOverlay, modalBody, modalOverlayClass, modalClass);
+	
+	if (triggerButton) {
+		const triggerButtons = document.querySelectorAll(triggerButton);
+        
+		triggerButtons.forEach((btn) => {
+			btn.addEventListener('click', (e) => {
+				e.preventDefault();
+				openModal(modalOverlay, modalBody, modalOverlayClass, modalClass);
+			});
 		});
-	});
+	}
+
+	const closeButtons = document.querySelectorAll(closeButton);
 
 	closeButtons.forEach((btn) => {
 		btn.addEventListener('click', () => {
@@ -92,7 +97,7 @@ const bindModal = ({
 		document.addEventListener('keydown', (e) => closeModalOnKey(e));
 	}
 
-	if (openOntimeDelay) {
+	if (openOntime) {
 		setTimeout(() => {
 			openModal(modalOverlay, modalBody, modalOverlayClass, modalClass);
 		}, openOntimeDelay);
@@ -109,22 +114,21 @@ const modals = () => {
 		closeButton: '[data-modal-close]',
 		closeOnOutside: true,
 		closeOnKey: true,
-		openOntimeDelay: false,
+		openOntime: true,
+		openOntimeDelay: 60000
 	});
 };
 
-const contactsModals = () => {
+const contactsModal = () => {
 	bindModal({
-		triggerButton: null,
 		modalOverlay: '#contacts-modal',
 		modalBody: '.contacts-modal__content',
 		modalOverlayClass: 'showModal',
 		modalClass: 'showModal-scale',
 		closeButton: '[data-modal-close]',
 		closeOnOutside: true,
-		closeOnKey: true,
-		openOntimeDelay: false,
+		closeOnKey: true
 	});
 };
 
-export { modals, openModal, closeModal, contactsModals };
+export { modals, openModal, closeModal, contactsModal };

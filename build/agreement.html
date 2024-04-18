@@ -9,6 +9,12 @@
 			href="./images/favicons/logo-dark.svg"
 			type="image/x-icon"
 		/>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+        />
+
 		<link rel="stylesheet" href="./css/main.css" />
 	</head>
 	<body>
@@ -526,6 +532,43 @@
 </section>
 
 		</main>
+
+        <section class="basket">
+	<div class="basket__content">
+		<h2 class="basket__title section__title text-center">Кошик</h2>
+
+		<ul class="basket__list"></ul>
+
+		<div class="basket-buttons">
+			<a href="#!" class="btn continue-shopping-btn" data-modal-close>
+				<svg class="icon basket-icon basket-icon-orange">
+					<use href="./images/svgsprite/sprite.symbol.svg#basket-icon"></use>
+				</svg>
+				Продовжити покупки
+			</a>
+			<a href="#!" class="btn btn-assent checkout-btn">
+				<svg class="icon checkout-icon">
+					<use href="./images/svgsprite/sprite.symbol.svg#todo-icon"></use>
+				</svg>
+				Оформити заказ
+			</a>
+		</div>
+
+		<button class="basket__closeBtn" data-modal-close>
+			<svg class="icon closeModal-icon">
+				<use href="./images/svgsprite/sprite.symbol.svg#closeBtn-icon"></use>
+			</svg>
+		</button>
+	</div>
+
+	<div class="basket-ellipses none">
+		<div class="el basket-ellipse-1"></div>
+		<div class="el basket-ellipse-2"></div>
+		<div class="el basket-ellipse-3"></div>
+	</div>
+</section>
+
+
 		<footer class="footer">
 	<div class="container">
 		<div class="footer__content">
@@ -737,5 +780,8 @@
 	</a>
 </footer>
 
+
+
+        <script src="./js/main.bundle.js" type="module" defer></script>
 	</body>
 </html>

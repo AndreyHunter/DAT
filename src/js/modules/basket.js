@@ -53,8 +53,32 @@ const getProductsByIds = async (ids, url) => {
 	}
 };
 
+const createEmptyMessage = () => {
+	return `
+        <div class="error">
+            <img 
+                src="https://xl-static.rozetka.com.ua/assets/img/design/modal-cart-dummy.svg" 
+                class="error__image" 
+                alt="error-message"
+            >
+            <div class="error__title">
+                Корзина Пуста
+            </div>
+        </div>
+    `;
+};
+
+const checkBasketEmpty = (data) => {
+	if (!data.length) {
+		const basketList = document.querySelector('.basket__list');
+		const error = createEmptyMessage();
+		basketList.insertAdjacentHTML('beforeend', error);
+	}
+};
+
 export {
 	updateBasketLenght,
 	updateBasketBgColor,
-	getProductsByIds
+	getProductsByIds,
+	checkBasketEmpty
 };

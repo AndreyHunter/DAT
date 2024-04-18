@@ -36,6 +36,11 @@
 		color: black;
 		font-size: 1em;
 		font-weight: 600;
+        transition: var(--main-transition);
+
+        &:hover {
+            color: var(--accentColor);
+        }
 	}
 
 	&-stock {

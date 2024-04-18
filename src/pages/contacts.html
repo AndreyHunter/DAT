@@ -9,23 +9,34 @@
 			href="./images/favicons/logo-dark.svg"
 			type="image/x-icon"
 		/>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+        />
+
 		<link rel="stylesheet" href="./css/main.css" />
 	</head>
 	<body>
 		@@include('html/_header.html')
 
 		<main class="main">
-			<ul class="breadcrumds">
-				<li class="breadcrumbs__item">
-					<a href="./index.html" class="breadcrumbs__link">Головна</a>
-				</li>
-				<li class="breadcrumbs__item breadcrumbs__item-active">Контакти</li>
-			</ul>
+            <ul class="breadcrumds swiper">
+                <li class="breadcrumbs__item  swiper-slide">
+                    <a href="./index.html" class="breadcrumbs__link">Головна</a>
+                </li>
+
+                <li class="breadcrumbs__item breadcrumbs__item-active swiper-slide">
+                    Контакти
+                </li>
+            </ul>
+    
 			@@include('html/contacts/_contacts.html') 
             @@include('html/contacts/_contacts-form.html')
 		</main>
 
-        @@include('html/contacts/_contacts-modal.html')
+        @@include('html/modals/_basket-modal.html')
+        @@include('html/modals/_contacts-modal.html')
 
 		@@include('html/_footer.html')
 

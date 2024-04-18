@@ -1,7 +1,7 @@
 // eslint-disable-next-line no-unused-vars
 import { initialndexSliders } from './modules/swiper.js';
 import {initialChoises, choisesMenu} from './modules/choices.js';
-import { productsData } from './modules/server.js';
+import { PRODUCTS_URL } from './modules/server.js';
 import { getData } from './modules/utils.js';
 import {
 	createProductCard,
@@ -12,6 +12,7 @@ import {
 	updateBasketLenght,
 	updateBasketBgColor,
 	getProductsByIds,
+	checkBasketEmpty
 } from './modules/basket.js';
 
 import { modals, openModal } from './modules/modals.js';
@@ -23,7 +24,7 @@ openMobileMenu('#nav-icon2', '.mobile-nav', 'open', 'active');
 choisesMenu();
 
 // Рендер продуктов
-getData(productsData)
+getData(PRODUCTS_URL)
 	.then((response) => {
 		createProductCard(response.novetly, '#novetlySliderWrapper');
 		createProductCard(response.promotions, '#promotion-sliderWrapper');
@@ -35,8 +36,9 @@ getData(productsData)
 	.catch((err) => console.error('Something went wrong', err));
 
 // Рендер корзины
-getProductsByIds(getItem('basket'), productsData)
+getProductsByIds(getItem('basket'), PRODUCTS_URL)
 	.then((products) => createBasketItem(products, '.basket__list'))
+	.then(() => checkBasketEmpty(getItem('basket')))
 	.then(() => initialChoises('.basket__product-select'))
 	.catch((error) => console.error('Error:', error));
 
@@ -63,11 +65,16 @@ const addToBasket = async (e) => {
 		openModal('.basket', '.basket__content', 'showModal', 'showModal-scale');
 	}
 
-	setItem('basket', basket);
 	updateBasketBgColor(basket);
-	const basketArray = await getProductsByIds(basket, productsData);
+	const basketArray = await getProductsByIds(basket, PRODUCTS_URL);
 	createBasketItem(basketArray, '.basket__list');
 	initialChoises('.basket__product-select');
+    
+	setItem('basket', basket);
+
+	checkBasketEmpty(getItem('basket'));
 };
+
+
 
 window.addEventListener('click', addToBasket);

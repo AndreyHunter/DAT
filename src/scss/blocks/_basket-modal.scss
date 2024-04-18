@@ -56,6 +56,13 @@
 .basket__product {
 	&-title {
 		font-size: 1.5625rem;
+        font-weight: bold;
+        color: black;
+        transition: var(--main-transition);
+
+        &:hover {
+            color: var(--accentColor);
+        }
 	}
 
 	&-content {
@@ -220,6 +227,26 @@
 	display: flex;
 	justify-content: space-between;
     gap: 30px;
+}
+
+// Basket empty
+
+.error {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.error__image {
+    width: 400px;
+    align-self: center;
+}
+
+.error__title {
+    text-align: center;
+    font-size: 2rem;
 }
 
 

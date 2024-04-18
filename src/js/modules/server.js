@@ -1,1 +1,1 @@
-export const productsData = './data/db.json';
+export const PRODUCTS_URL = './data/db.json';

@@ -9,6 +9,12 @@
 			href="./images/favicons/logo-dark.svg"
 			type="image/x-icon"
 		/>
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+        />
+
 		<link rel="stylesheet" href="./css/main.css" />
 	</head>
 	<body>
@@ -27,6 +33,12 @@
 			</ul>
 			@@include('html/_agreement.html')
 		</main>
+
+        @@include('html/modals/_basket-modal.html')
+
 		@@include('html/_footer.html')
+
+
+        <script src="./js/main.bundle.js" type="module" defer></script>
 	</body>
 </html>
