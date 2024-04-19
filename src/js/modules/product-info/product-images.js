@@ -1,7 +1,7 @@
 const renderProductImages = (dataProductObj) => {
 	const { images, title } = dataProductObj;
 
-	if (!images && !images.length) {
+	if (!images) {
 		return;
 	}
 

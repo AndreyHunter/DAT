@@ -14,5 +14,13 @@ async function getData(url) {
 const transformFormData = (formData) => {
 	return Object.fromEntries(formData.entries());
 };
+
+const transformPrice = (number) => {
+	if (!Number.isInteger(number)) {
+		return number.toFixed(2);
+	}
+
+	return number;
+};
     
-export { getData, transformFormData};
+export { getData, transformFormData, transformPrice};

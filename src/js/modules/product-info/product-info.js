@@ -1,4 +1,5 @@
 import { calcSeedsTotalPrice } from '../calculatePriceTotal';
+import {transformPrice} from '../utils';
 
 const renderProductInfo = (dataProductObj) => {
 	const { title, inStock, manufacturer, price, category } = dataProductObj;
@@ -21,14 +22,14 @@ const renderProductInfo = (dataProductObj) => {
 	productManufacturerTitle.textContent = manufacturer.title;
 
 	if (category.link === 'seeds') {
-		productInfoPriceFor.textContent = `${price.toFixed(2)}грн/5шт`;
-		productInfoPrice.textContent = `${calcSeedsTotalPrice(price.toFixed(2), 50)} грн`;
+		productInfoPriceFor.textContent = `${transformPrice(price)}грн/5шт`;
+		productInfoPrice.textContent = `${calcSeedsTotalPrice(transformPrice(price), 50)} грн`;
 		productInfoPrice.nextElementSibling.textContent = 'Ціна за 50 шт';
 	}
 
 	if (category.link === 'plants-protection') {
-		productInfoPriceFor.textContent = `${price.toFixed(2)}грн/2мл`;
-		productInfoPrice.textContent = `${price.toFixed(2)} грн`;
+		productInfoPriceFor.textContent = `${transformPrice(price)}грн/2мл`;
+		productInfoPrice.textContent = `${transformPrice(price)} грн`;
 		productInfoPrice.nextElementSibling.textContent = '';
 	}
 
@@ -45,3 +46,4 @@ const renderProductInfo = (dataProductObj) => {
 };
 
 export default renderProductInfo;
+

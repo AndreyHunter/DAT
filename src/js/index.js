@@ -26,8 +26,10 @@ choisesMenu();
 // Рендер продуктов
 getData(PRODUCTS_URL)
 	.then((response) => {
-		createProductCard(response.novetly, '#novetlySliderWrapper');
-		createProductCard(response.promotions, '#promotion-sliderWrapper');
+		const novetly = response.filter(product => product.isNew === true);
+		const promotions = response.filter(product => product.isPromotion === true);
+		createProductCard(novetly, '#novetlySliderWrapper');
+		createProductCard(promotions, '#promotion-sliderWrapper');
 	})
 	.then(() => {
 		updateBasketLenght();

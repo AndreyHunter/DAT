@@ -38,8 +38,6 @@ tabs({
 
 initialProductSlider();
 
-let produtsArray = [];
-
 // Рендер корзины
 getProductsByIds(getItem('basket'), PRODUCTS_URL)
 	.then((res) => createBasketItem(res, '.basket__list'))
@@ -52,8 +50,7 @@ getProductsByIds(getItem('basket'), PRODUCTS_URL)
 
 // Получение продуктов
 getData(PRODUCTS_URL)
-	.then((res) => (produtsArray = [...res.novetly, ...res.promotions]))
-	.then(() => loadProductDetails(produtsArray))
+	.then((res) => loadProductDetails(res))
 	.catch((err) => console.error('Something went wrong', err));
 
 const loadProductDetails = (data) => {

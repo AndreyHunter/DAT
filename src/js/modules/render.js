@@ -1,4 +1,4 @@
-import { calculateTotalPriceForLiters, calcSeedsTotalPrice } from './calculatePriceTotal';
+import { transformPrice } from './utils';
 
 const createProductCard = (data, selector) => {
 	const element = document.querySelector(selector);
@@ -22,7 +22,7 @@ const createProductCard = (data, selector) => {
                 <div class="product__card-about">
                     <a href="product.html?id=${id}" class="product__card-title">${title}</a>
                     <span class="product__card-stock ${!inStock ? 'inStock-finished' : ''}">${inStock ? 'В наявності' : 'Закінчився'}</span>
-                    <span class="product__card-price">${price.toFixed(2)} грн</span>
+                    <span class="product__card-price">${transformPrice(price)} грн</span>
                     <span class="product__card-quantity">1 шт</span>
                     <div class="addToBasketBtn" data-modal-open>
                         <svg class="basket-icon" width="16" height="16">
@@ -57,7 +57,7 @@ const createBasketItem = (array, selector) => {
                         </div>
 
                         <div class="basket__product-about">
-                            <h4 class="basket__product-price">${price.toFixed(2)} грн</h4>
+                            <h4 class="basket__product-price">${transformPrice(price)} грн</h4>
                             <span class="basket__product-price-desc">Ціна за 1</span>
                             <div class="basket__product-manufacturer">
                                 <strong class="basket__product-manufacturer-title">Виробник</strong>

@@ -7,9 +7,18 @@ const renderProductDescription = (dataProductObj) => {
 	productTitle.textContent = title;
 	productDetailsDesc.textContent = desc;
 
-	specifications?.length && createSpecifications(specifications);
-	characteristics?.length && createCharacteristics(characteristics);
-	recomendations?.length && createRecomendations(recomendations);
+	if (specifications) {
+		createSpecifications(specifications);
+	}
+    
+	if (characteristics) {
+		createCharacteristics(characteristics);
+	}
+
+	if (recomendations) {
+		createRecomendations(recomendations);
+	}
+
 };
 
 const createSpecificationsList = (specifications) => {

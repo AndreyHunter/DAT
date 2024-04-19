@@ -38,12 +38,10 @@ const getProductsByIds = async (ids, url) => {
 		const data = await response.json();
 		const productsByIds = [];
 
-		Object.keys(data).forEach((category) => {
-			data[category].forEach((product) => {
-				if (numbersId.includes(product.id)) {
-					productsByIds.push(product);
-				}
-			});
+		data.forEach(product => {
+			if (numbersId.includes(product.id)) {
+				productsByIds.push(product);
+			}
 		});
 
 		return productsByIds;

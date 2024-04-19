@@ -101,6 +101,7 @@ const initialProductSlider = () => {
 
 	const productSubSlider = new Swiper('#product-sub-slider', {
 		...commonSwiperOptions,
+		allowTouchMove: true,
 		slidesPerView: 3,
 		spaceBetween: 30,
 	});
