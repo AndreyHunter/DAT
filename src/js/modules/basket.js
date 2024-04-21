@@ -38,7 +38,7 @@ const getProductsByIds = async (ids, url) => {
 		const data = await response.json();
 		const productsByIds = [];
 
-		data.forEach(product => {
+		data.forEach((product) => {
 			if (numbersId.includes(product.id)) {
 				productsByIds.push(product);
 			}
@@ -74,9 +74,4 @@ const checkBasketEmpty = (data) => {
 	}
 };
 
-export {
-	updateBasketLenght,
-	updateBasketBgColor,
-	getProductsByIds,
-	checkBasketEmpty
-};
+export { updateBasketLenght, updateBasketBgColor, getProductsByIds, checkBasketEmpty };

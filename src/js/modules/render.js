@@ -6,7 +6,7 @@ const createProductCard = (data, selector) => {
 	for (let key of data) {
 		const { id, title, image, price, inStock } = key;
 
-		const novetlyCard = `
+		const cardHTML = `
             <div class="product__card swiper-slide" data-productid="${id}">
                 <svg class="comparison-icon comparison-icon-absolute" width="16" height="16">
                     <use class="svg-comparison-use" xlink:href="./images/svgsprite/sprite.symbol.svg#compration-icon"/>
@@ -32,7 +32,7 @@ const createProductCard = (data, selector) => {
                 </div>
             </div>
             `;
-		element.insertAdjacentHTML('beforeend', novetlyCard);
+		element.insertAdjacentHTML('beforeend', cardHTML);
 	}
 };
 
@@ -110,7 +110,4 @@ const createSelect = (options) => {
 	return select.outerHTML;
 };
 
-export {
-	createProductCard,
-	createBasketItem
-};
+export { createProductCard, createBasketItem };

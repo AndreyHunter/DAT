@@ -7,12 +7,10 @@ import { getItem, setItem } from './modules/local-storage.js';
 import {
 	updateBasketLenght,
 	getProductsByIds,
-	checkBasketEmpty
+	checkBasketEmpty,
 } from './modules/basket.js';
 
-import {
-	createBasketItem
-} from './modules/render.js';
+import { createBasketItem } from './modules/render.js';
 
 import { initialProductSlider } from './modules/swiper.js';
 import { initialChoises } from './modules/choices.js';

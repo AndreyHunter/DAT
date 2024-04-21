@@ -1,0 +1,91 @@
+.call-modal {
+    visibility: hidden;
+    pointer-events: none;
+    opacity: 0;
+	width: 100%;
+	min-height: 100%;
+	background-color: rgba(0, 0, 0, 0.312);
+	position: fixed;
+	z-index: 20;
+    padding: 0 15px;
+	display: grid;
+	place-items: center;
+	transition: all 0.3s ease-in;
+
+    &__content {
+        width: 550px;
+		border-radius: 20px;
+		background-color: white;
+		padding: 20px 30px; 
+		display: flex;
+		flex-direction: column;
+		gap: 20px;
+		z-index: 5;
+		position: relative;
+		transition: all 0.2s ease-in;
+        transform: scale(0);
+
+        @media(max-width: 600px) {
+            width: 100%;
+        }
+	
+    }
+    &__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 30px;
+    }
+    &__title {
+        font-size: 1.6rem;
+
+        @media(max-width: 600px) {
+            font-size: 1.39rem;
+        }
+
+        @media(max-width: 500px) {
+            font-size: 1.25rem;
+        }
+    }
+    &__close {
+        font-size: 2rem;
+        font-weight: bold;
+        opacity: 0.7;
+        cursor: pointer;
+        transition: var(--main-transition);
+        &:hover {
+            opacity: 1;
+        }
+    }
+}
+
+
+.call-form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+
+
+    &__input {
+        width: 100%;
+        min-height: 60px;
+        padding: 10px;
+        border-radius: 5px;
+        background-color: #085508b5;
+        color: white;
+
+        &::placeholder {
+            color: white;
+        }
+    }
+
+    &__button {
+        width: 100%;
+        border-radius: 5px;
+        background-color: var(--btnColor);
+        color: white;
+        &:hover {
+            background-color: var(--btn-hover);
+        }
+    }
+}    

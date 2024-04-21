@@ -1,18 +1,15 @@
 // eslint-disable-next-line no-unused-vars
 import { initialndexSliders } from './modules/swiper.js';
-import {initialChoises, choisesMenu} from './modules/choices.js';
+import { initialChoises, choisesMenu } from './modules/choices.js';
 import { PRODUCTS_URL } from './modules/server.js';
 import { getData } from './modules/utils.js';
-import {
-	createProductCard,
-	createBasketItem,
-} from './modules/render.js';
+import { createProductCard, createBasketItem } from './modules/render.js';
 import { getItem, setItem } from './modules/local-storage.js';
 import {
 	updateBasketLenght,
 	updateBasketBgColor,
 	getProductsByIds,
-	checkBasketEmpty
+	checkBasketEmpty,
 } from './modules/basket.js';
 
 import { modals, openModal } from './modules/modals.js';
@@ -26,8 +23,8 @@ choisesMenu();
 // Рендер продуктов
 getData(PRODUCTS_URL)
 	.then((response) => {
-		const novetly = response.filter(product => product.isNew === true);
-		const promotions = response.filter(product => product.isPromotion === true);
+		const novetly = response.filter((product) => product.isNew === true);
+		const promotions = response.filter((product) => product.isPromotion === true);
 		createProductCard(novetly, '#novetlySliderWrapper');
 		createProductCard(promotions, '#promotion-sliderWrapper');
 	})
@@ -71,12 +68,10 @@ const addToBasket = async (e) => {
 	const basketArray = await getProductsByIds(basket, PRODUCTS_URL);
 	createBasketItem(basketArray, '.basket__list');
 	initialChoises('.basket__product-select');
-    
+
 	setItem('basket', basket);
 
 	checkBasketEmpty(getItem('basket'));
 };
-
-
 
 window.addEventListener('click', addToBasket);

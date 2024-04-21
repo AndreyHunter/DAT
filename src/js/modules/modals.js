@@ -27,7 +27,7 @@ const toggleBodyOverflow = () => {
 	document.body.style.overflow = document.body.style.overflow === '' ? 'hidden' : '';
 	const scrollBarWidth = getScrollBarWidth();
 	document.documentElement.style.paddingRight =
-	document.body.style.overflow === 'hidden' ? scrollBarWidth + 'px' : '';
+		document.body.style.overflow === 'hidden' ? scrollBarWidth + 'px' : '';
 };
 
 const getScrollBarWidth = () => {
@@ -50,13 +50,13 @@ const bindModal = ({
 	closeOnOutside = true,
 	closeOnKey = true,
 	openOntime = false,
-	openOntimeDelay = 4000
+	openOntimeDelay = 4000,
 }) => {
 	const modal = document.querySelector(modalOverlay);
-	
+
 	if (triggerButton) {
 		const triggerButtons = document.querySelectorAll(triggerButton);
-        
+
 		triggerButtons.forEach((btn) => {
 			btn.addEventListener('click', (e) => {
 				e.preventDefault();
@@ -114,8 +114,19 @@ const modals = () => {
 		closeButton: '[data-modal-close]',
 		closeOnOutside: true,
 		closeOnKey: true,
+	});
+
+	bindModal({
+		triggerButton: '.phone__feedback',
+		modalOverlay: '.call-modal',
+		modalBody: '.call-modal__content',
+		modalOverlayClass: 'showModal',
+		modalClass: 'showModal-scale',
+		closeButton: '.call-modal__close',
+		closeOnOutside: true,
+		closeOnKey: true,
 		openOntime: true,
-		openOntimeDelay: 60000
+		openOntimeDelay: 60000,
 	});
 };
 
@@ -127,7 +138,7 @@ const contactsModal = () => {
 		modalClass: 'showModal-scale',
 		closeButton: '[data-modal-close]',
 		closeOnOutside: true,
-		closeOnKey: true
+		closeOnKey: true,
 	});
 };
 

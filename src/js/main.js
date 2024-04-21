@@ -9,7 +9,6 @@ import { getItem } from './modules/local-storage.js';
 import { createBasketItem } from './modules/render.js';
 import { initialChoises } from './modules/choices.js';
 
-
 import { modals } from './modules/modals.js';
 import openMobileMenu from './modules/mobile-menu.js';
 

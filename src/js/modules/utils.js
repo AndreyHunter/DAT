@@ -4,7 +4,7 @@ async function getData(url) {
 		if (!res.ok) {
 			throw new Error('Feiled to Fetch');
 		}
-    
+
 		return await res.json();
 	} catch (err) {
 		console.error('Network err', err);
@@ -22,5 +22,5 @@ const transformPrice = (number) => {
 
 	return number;
 };
-    
-export { getData, transformFormData, transformPrice};
+
+export { getData, transformFormData, transformPrice };

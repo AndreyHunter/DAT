@@ -1,5 +1,5 @@
 import { calcSeedsTotalPrice } from '../calculatePriceTotal';
-import {transformPrice} from '../utils';
+import { transformPrice } from '../utils';
 
 const renderProductInfo = (dataProductObj) => {
 	const { title, inStock, manufacturer, price, category } = dataProductObj;
@@ -11,7 +11,7 @@ const renderProductInfo = (dataProductObj) => {
 		'.basket__product-manufacturer-image',
 	);
 	const productManufacturerTitle =
-        productInfoWrapper.querySelector('.manufacturer__title');
+		productInfoWrapper.querySelector('.manufacturer__title');
 	const productInfoPrice = productInfoWrapper.querySelector(
 		'.product-info__price strong',
 	);
@@ -33,6 +33,12 @@ const renderProductInfo = (dataProductObj) => {
 		productInfoPrice.nextElementSibling.textContent = '';
 	}
 
+	if (category.link === 'tools') {
+		productInfoPriceFor.textContent = `${transformPrice(price)}грн/шт`;
+		productInfoPrice.textContent = `${transformPrice(price)} грн`;
+		productInfoPrice.nextElementSibling.textContent = '';
+	}
+
 	if (inStock) {
 		productInStock.innerHTML += `
             <svg class="icon inStock-icon">
@@ -46,4 +52,3 @@ const renderProductInfo = (dataProductObj) => {
 };
 
 export default renderProductInfo;
-

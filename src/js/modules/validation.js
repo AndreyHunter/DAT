@@ -1,5 +1,5 @@
 const validateRegexp = {
-	email:  /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
+	email: /^[^\s@]+@[^\s@]+\.[^\s@]+$/,
 };
 
 const clearError = (inputSelector) => {
@@ -7,15 +7,14 @@ const clearError = (inputSelector) => {
 	const errors = parent.querySelectorAll('.error-message');
 
 	if (errors.length > 0) {
-		errors.forEach(err => err.remove());
+		errors.forEach((err) => err.remove());
 	}
-
 };
 
 const changePhonePlaceHolder = (inputsSelector) => {
 	const inputs = document.querySelectorAll(inputsSelector);
 
-	inputs.forEach(input => {
+	inputs.forEach((input) => {
 		input.addEventListener('focus', () => {
 			input.placeholder = '+380';
 		});
@@ -26,23 +25,19 @@ const changePhonePlaceHolder = (inputsSelector) => {
 	});
 };
 
-const validateTextInputs = ({
-	inputSelector,
-	minLength,
-	maxLength
-}) => {
+const validateTextInputs = ({ inputSelector, minLength, maxLength }) => {
 	let isValide = true;
 
 	const inputs = document.querySelectorAll(inputSelector);
 
-	inputs.forEach(input => {
+	inputs.forEach((input) => {
 		const inputValue = input.value.trim();
 		const inputWrapper = input.parentNode;
 
 		clearError(input);
 
 		if (!inputValue) {
-			addError(inputWrapper, 'Поле обов\'язково!');
+			addError(inputWrapper, "Поле обов'язково!");
 			isValide = false;
 		} else if (inputValue.length < minLength) {
 			addError(inputWrapper, `Мінімум ${minLength} символів`);
@@ -50,7 +45,7 @@ const validateTextInputs = ({
 		} else if (inputValue.length > maxLength) {
 			addError(inputWrapper, `Максимум ${maxLength} символів`);
 			isValide = false;
-		}	
+		}
 	});
 
 	return isValide;
@@ -60,15 +55,15 @@ const validateEmailInputs = (emailInputSelector) => {
 	let isValide = true;
 
 	const emailInputs = document.querySelectorAll(emailInputSelector);
-	
-	emailInputs.forEach(input => {
-		const emailValue = input.value.trim();        
+
+	emailInputs.forEach((input) => {
+		const emailValue = input.value.trim();
 		const inputWrapper = input.parentNode;
 
 		clearError(input);
 
 		if (!emailValue) {
-			addError(inputWrapper, 'Поле обов\'язково!');
+			addError(inputWrapper, "Поле обов'язково!");
 			isValide = false;
 		} else if (!/@/g.test(emailValue)) {
 			addError(inputWrapper, 'email повинен мати @ символ');
@@ -76,7 +71,7 @@ const validateEmailInputs = (emailInputSelector) => {
 		} else if (!validateRegexp.email.test(emailValue)) {
 			addError(inputWrapper, 'Введіть валідний email');
 			isValide = false;
-		}	
+		}
 	});
 
 	return isValide;
@@ -87,7 +82,7 @@ const validatePhone = (phoneInputSelector) => {
 
 	const phoneInputs = document.querySelectorAll(phoneInputSelector);
 
-	phoneInputs.forEach(input => {
+	phoneInputs.forEach((input) => {
 		input.addEventListener('input', () => {
 			input.value = input.value.replace(/\D/g, '');
 		});
@@ -95,14 +90,14 @@ const validatePhone = (phoneInputSelector) => {
 
 	changePhonePlaceHolder(phoneInputSelector);
 
-	phoneInputs.forEach(input => {
-		const phoneValue = input.value.trim();        
+	phoneInputs.forEach((input) => {
+		const phoneValue = input.value.trim();
 		const inputWrapper = input.parentNode;
-        
+
 		clearError(input);
 
 		if (!phoneValue) {
-			addError(inputWrapper, 'Поле обов\'язково!');
+			addError(inputWrapper, "Поле обов'язково!");
 			isValide = false;
 		} else if (phoneValue.length !== 9) {
 			addError(inputWrapper, `Телефон повинен мати ${9} цифр`);
@@ -117,13 +112,7 @@ function addError(inputParent, errorMessage) {
 	const errorSpan = document.createElement('span');
 	errorSpan.classList.add('error-message');
 	errorSpan.textContent = errorMessage;
-	inputParent.appendChild(errorSpan); 
+	inputParent.appendChild(errorSpan);
 }
 
-
-export {
-	validateTextInputs,
-	validateEmailInputs,
-	validatePhone,
-	changePhonePlaceHolder
-};
+export { validateTextInputs, validateEmailInputs, validatePhone, changePhonePlaceHolder };

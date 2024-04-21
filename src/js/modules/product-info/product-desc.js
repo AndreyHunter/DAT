@@ -10,7 +10,7 @@ const renderProductDescription = (dataProductObj) => {
 	if (specifications) {
 		createSpecifications(specifications);
 	}
-    
+
 	if (characteristics) {
 		createCharacteristics(characteristics);
 	}
@@ -18,15 +18,16 @@ const renderProductDescription = (dataProductObj) => {
 	if (recomendations) {
 		createRecomendations(recomendations);
 	}
-
 };
 
 const createSpecificationsList = (specifications) => {
-	return specifications.map(item => {
-		const { title, answer } = item;
+	return specifications
+		.map((item) => {
+			const { title, answer } = item;
 
-		return `<li><strong class="desc-assent">${title}</strong> ${answer}</li>`;
-	}).join('');
+			return `<li><strong class="desc-assent">${title}</strong> ${answer}</li>`;
+		})
+		.join('');
 };
 
 const createSpecifications = (specifications) => {
@@ -44,9 +45,11 @@ const createSpecifications = (specifications) => {
 };
 
 const createCharacteristicList = (characteristics) => {
-	return characteristics.map(item => {
-		return `<li class="product-details__list-item">${item}</li>`;
-	}).join('');
+	return characteristics
+		.map((item) => {
+			return `<li class="product-details__list-item">${item}</li>`;
+		})
+		.join('');
 };
 
 const createCharacteristics = (characteristics) => {
@@ -66,9 +69,11 @@ const createCharacteristics = (characteristics) => {
 };
 
 const createRecomendationList = (recomandations) => {
-	return recomandations.map(item => {
-		return `<li class="product-details__list-item">${item}</li>`;
-	}).join('');
+	return recomandations
+		.map((item) => {
+			return `<li class="product-details__list-item">${item}</li>`;
+		})
+		.join('');
 };
 
 const createRecomendations = (recomendations) => {

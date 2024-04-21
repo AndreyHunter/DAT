@@ -18,21 +18,21 @@ const renderBreadCrambs = (dataProductObj) => {
                     <a href="./catalog.html" class="breadcrumbs__link">Каталог</a>
                 </li>
                     ${
-	category
-		? `
+						category
+							? `
                         <li class="breadcrumbs__item">
                             <a href="${getCategoryLink(category)}" class="breadcrumbs__link">${category.title}</a>
                         </li>`
-		: ''
-}
+							: ''
+					}
                     ${
-	subCategory
-		? `
+						subCategory
+							? `
                         <li class="breadcrumbs__item">
                             <a href="${getSubCategoryLink(subCategory)}" class="breadcrumbs__link">${subCategory ? subCategory.title : ''}</a>
                         </li>`
-		: ''
-}
+							: ''
+					}
                 <li class="breadcrumbs__item breadcrumbs__item-active">${title}</li>
             </ul>
     `;

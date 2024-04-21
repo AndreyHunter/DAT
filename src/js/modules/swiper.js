@@ -29,11 +29,10 @@ const commonSwiperBreakpoints = {
 			slidesPerView: 1,
 			spaceBetween: 30,
 		},
-	}
+	},
 };
 
 const initialndexSliders = () => {
-
 	const novetlySwiper = new Swiper('#novetlySlider', {
 		...commonSwiperOptions,
 		...commonSwiperBreakpoints,
@@ -82,7 +81,6 @@ const initialndexSliders = () => {
 		},
 	});
 
-
 	const updateTouchMoveOption = () => {
 		const isTouchMoveAllowed = window.innerWidth <= 1030;
 		if (isTouchMoveAllowed) {
@@ -98,7 +96,6 @@ const initialndexSliders = () => {
 };
 
 const initialProductSlider = () => {
-
 	const productSubSlider = new Swiper('#product-sub-slider', {
 		...commonSwiperOptions,
 		allowTouchMove: true,
@@ -120,8 +117,4 @@ const initialProductSlider = () => {
 	});
 };
 
-
-export { 
-	initialndexSliders,
-	initialProductSlider,
-};
+export { initialndexSliders, initialProductSlider };

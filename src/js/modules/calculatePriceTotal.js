@@ -5,39 +5,39 @@ const calculateTotalPriceForLiters = (pricePerLiter, selectedOption) => {
 	let count = 0;
 
 	switch (optionNumber) {
-	case 5:
-		count = 5;
-		break;
-	case 4:
-		count = 4;
-		break;
-	case 3:
-		count = 3;
-		break;
-	case 2:
-		count = 2;
-		break;
-	case 1:
-		count = 1;
-		break;
-	case 500:
-		count = 0.5;
-		break;
-	case 400:
-		count = 0.4;
-		break;
-	case 300:
-		count = 0.3;
-		break;
-	case 200:
-		count = 0.2;
-		break;
-	case 100:
-		count = 0.1;
-		break;
-	default:
-		console.error('Обрана некоректна опція');
-		return null;
+		case 5:
+			count = 5;
+			break;
+		case 4:
+			count = 4;
+			break;
+		case 3:
+			count = 3;
+			break;
+		case 2:
+			count = 2;
+			break;
+		case 1:
+			count = 1;
+			break;
+		case 500:
+			count = 0.5;
+			break;
+		case 400:
+			count = 0.4;
+			break;
+		case 300:
+			count = 0.3;
+			break;
+		case 200:
+			count = 0.2;
+			break;
+		case 100:
+			count = 0.1;
+			break;
+		default:
+			console.error('Обрана некоректна опція');
+			return null;
 	}
 
 	const totalPrice = pricePerLiter * count;
