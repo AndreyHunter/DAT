@@ -21,15 +21,18 @@
 		@@include('html/_header.html')
 
 		<main class="main">
-            <ul class="breadcrumds swiper">
-                <li class="breadcrumbs__item  swiper-slide">
-                    <a href="./index.html" class="breadcrumbs__link">Головна</a>
-                </li>
-
-                <li class="breadcrumbs__item breadcrumbs__item-active swiper-slide">
-                    Контакти
-                </li>
-            </ul>
+            <div class="breadcrambs-container container">
+                <div class="swiper breadcrumds-wrapper">
+                    <ul class="breadcrumds">
+                        <li class="breadcrumbs__item  swiper-slide">
+                            <a href="./index.html" class="breadcrumbs__link">Головна</a>
+                        </li>
+                        <li class="breadcrumbs__item breadcrumbs__item-active swiper-slide">
+                            Контакти
+                        </li>
+                    </ul>
+                </div>
+            </div>
     
 			@@include('html/contacts/_contacts.html') 
             @@include('html/contacts/_contacts-form.html')

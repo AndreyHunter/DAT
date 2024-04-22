@@ -20,12 +20,16 @@
 	<body>
 		@@include('html/_header.html')
 		<main class="main">
-			<ul class="breadcrumds">
-				<li class="breadcrumbs__item">
-					<a href="./index.html" class="breadcrumbs__link">Головна</a>
-				</li>
-				<li class="breadcrumbs__item breadcrumbs__item-active">Партнери</li>
-			</ul>
+            <div class="breadcrambs-container container">
+                <div class="swiper breadcrumds-wrapper">
+                    <ul class="breadcrumds">
+                        <li class="breadcrumbs__item swiper-slide">
+                            <a href="./index.html" class="breadcrumbs__link">Головна</a>
+                        </li>
+                        <li class="breadcrumbs__item breadcrumbs__item-active swiper-slide">Партнери</li>
+                    </ul>
+                </div>
+            </div>
 			@@include('html/_page-partners.html')
 		</main>
 

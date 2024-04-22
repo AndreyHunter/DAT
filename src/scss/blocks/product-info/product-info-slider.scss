@@ -22,7 +22,9 @@
 
 .product-info__image {
 	max-width: 220px;
+    max-height: 250px;
     border-radius: 5px;
+    object-fit: contain;
 }
 
 .product-slider__prev,
@@ -63,7 +65,9 @@
 }
 
 .product-sub-slider__image {
-    max-width: 55px;
+    max-width: 65px;
+    max-height: 65px;
+    object-fit: contain;
     user-select: none;
     cursor: pointer;
 }

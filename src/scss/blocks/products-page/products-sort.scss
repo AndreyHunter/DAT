@@ -1,0 +1,35 @@
+.products-sort {
+    width: 280px;
+    position: relative;
+}
+
+.products-sort::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 35px;
+    transform: translateY(-50%) rotate(-180deg);
+    width: 15px;
+    height: 15px;
+    background-image: url(../images/svgicons/arrow-down-sort.svg); 
+    background-repeat: no-repeat; 
+}
+
+.products-sort select {
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-weight: 600;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    cursor: pointer;
+    outline: none;
+    transition: box-shadow 0.1s ease-in;
+}
+
+
+.products-sort select:focus {
+    box-shadow: 0px 0px 10px var(--accentColor);
+}

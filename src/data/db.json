@@ -76,6 +76,7 @@
         "isNew": true,
         "isPromotion": false,
         "manufacturer": {
+            "id": "syngenta",
             "title": "Syngenta, Швейцарія",
             "image": "https://i.ibb.co/DLchgrz/syngenta-logo-2.jpg"
         },
@@ -85,7 +86,7 @@
         },
         "subCategory": {
             "title": "Фунгіциди",
-            "link": "Fungicides"
+            "link": "fungicides"
         },
         "images": [
             "./images/product-images/product-2.png",
@@ -151,6 +152,7 @@
         "isNew": true,
         "isPromotion": false,
         "manufacturer": {
+            "id": "syngenta",
             "title": "Syngenta, Швейцарія",
             "image": "https://i.ibb.co/DLchgrz/syngenta-logo-2.jpg"
         },
@@ -160,7 +162,7 @@
         },
         "subCategory": {
             "title": "Фунгіциди",
-            "link": "herbicides"
+            "link": "fungicides"
         },
         "images": [
             "https://gradka.com.ua/media/catalog/product/cache/0bb074b9467fa7831688a91340612dbb/f/i/file_1_63.jpg",
@@ -235,6 +237,7 @@
         "isNew": true,
         "isPromotion": false,
         "manufacturer": {
+            "id": "syngenta",
             "title": "Syngenta, Швейцарія",
             "image": "https://i.ibb.co/DLchgrz/syngenta-logo-2.jpg"
         },
@@ -315,6 +318,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "rangoli",
             "title": "Rangoli, Індія",
             "image": "https://img.agropages.com/UpFiles/logo/20181016171352ap44.JPG"
         },
@@ -736,6 +740,10 @@
             "image": "https://agrorobota.com.ua/storage/666b2054baeab7df67bfc7df179d0ceb/0Bd4COsI_RSo4CekI-cPQCC5VTZUTWD0.png"
         },
         "category": {
+            "title": "Засоби захисту рослин",
+            "link": "plants-protection"
+        },
+        "subCategory": {
             "title": "Протруювачі",
             "link": "poisoners"
         },

@@ -31,4 +31,4 @@ const choisesMenu = () => {
 	});
 };
 
-export { initialChoises, choisesMenu };
+export { initialChoises, choisesMenu,};

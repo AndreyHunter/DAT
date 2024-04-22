@@ -1,0 +1,31 @@
+.products {
+    &__title {
+        margin-bottom: 30px;
+    }
+}
+
+.products-actions {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+    margin-bottom: 20px;
+}
+
+.products-length {
+    color: var(--black-80);
+}
+
+.products-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 30px;
+}
+
+.protucts-content {
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+}
+

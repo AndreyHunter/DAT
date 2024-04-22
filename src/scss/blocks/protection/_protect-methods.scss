@@ -1,4 +1,4 @@
-.protect-methods {
+.plants-protection {
 	min-height: 500px;
 	padding-block: 109px;
 	position: relative;
@@ -21,22 +21,28 @@
 				rgba(232, 78, 15, 0.3) 3.67%,
 				rgba(232, 78, 15, 0) 87.59%
 			),
-			linear-gradient(0deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.6) 100%),
-			url(../images/protect-plants-icons/protect-plants-bg.jpg),
+			linear-gradient(0deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.5) 100%),
+			url(../images/plants-protection-bg.png),
 			lightgray 0px -721.412px no-repeat;
 		background-size: cover;
-		z-index: -1;
 		background-position: center;
+		z-index: -1;
 	}
 
 	&__title {
 		color: white;
+        padding-left: 30px;
 		margin-bottom: 16px;
+
+        &::after {
+            display: none;
+        }
 	}
 
 	&__desc {
 		color: white;
 		font-weight: 300;
+        line-height: 140%;
 	}
 }
 

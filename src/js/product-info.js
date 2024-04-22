@@ -12,18 +12,19 @@ import {
 
 import { createBasketItem } from './modules/render.js';
 
-import { initialProductSlider } from './modules/swiper.js';
+import { initialProductSlider, initialBreadcrambsSlider } from './modules/swiper.js';
 import { initialChoises } from './modules/choices.js';
 
-import renderProductDescription from './modules/product-info/product-desc';
-import renderProductImages from './modules/product-info/product-images';
-import renderProductInfo from './modules/product-info/product-info';
-import renderBreadCrambs from './modules/product-info/breadcrambs';
+import renderProductDescription from './modules/product-info/product-desc.js';
+import renderProductImages from './modules/product-info/product-images.js';
+import renderProductInfo from './modules/product-info/product-info.js';
+import renderBreadCrambs from './modules/product-info/breadcrambs.js';
 
 import { modals } from './modules/modals.js';
 import tabs from './modules/tabs.js';
 
 modals();
+initialBreadcrambsSlider();
 
 tabs({
 	wrapperSelector: '.product-details',

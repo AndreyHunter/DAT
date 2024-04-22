@@ -21,18 +21,25 @@
 	<body>
 		@@include('html/_header.html')
 		<main class="main">
-			<ul class="breadcrumds">
-				<li class="breadcrumbs__item">
-					<a href="./index.html" class="breadcrumbs__link">Головна</a>
-				</li>
-				<li class="breadcrumbs__item">
-					<a href="./catalog.html" class="breadcrumbs__link">Каталог</a>
-				</li>
-				<li class="breadcrumbs__item breadcrumbs__item-active">
-					Засоби захисту рослин
-				</li>
-			</ul>
-			@@include('html/_plants-protection-list.html')
+			<div class="container">
+                <div class="swiper breadcrumds-wrapper">
+                    <ul class="breadcrumds swiper-wrapper">
+                        <li class="breadcrumbs__item swiper-slide">
+                            <a href="./index.html" class="breadcrumbs__link">Головна</a>
+                        </li>
+                        <li class="breadcrumbs__item swiper-slide">
+                            <a href="./catalog.html" class="breadcrumbs__link">Каталог</a>
+                        </li>
+                        <li class="breadcrumbs__item swiper-slide breadcrumbs__item-active">
+                            Засоби захисту рослин
+                        </li>
+                    </ul>
+                </div>
+            </div>
+			
+            @@include('html/product-pages/_product-page.html')
+
+            <!-- @@include('html/plants-protection/_plants-protection-bag.html') -->
 		</main>
 
 
@@ -42,6 +49,6 @@
 		@@include('html/_footer.html')
 
 
-        <script src="./js/main.bundle.js" type="module" defer></script>
+        <script src="./js/products.bundle.js" type="module" defer></script>
 	</body>
 </html>

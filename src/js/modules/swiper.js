@@ -117,4 +117,36 @@ const initialProductSlider = () => {
 	});
 };
 
-export { initialndexSliders, initialProductSlider };
+const initialBreadcrambsSlider = () => {
+	let mySwiper = null;
+
+	function initSwiper() {
+		mySwiper = new Swiper('.breadcrumds-wrapper', {
+			...commonSwiperOptions,
+			slidesPerView: 'auto',
+			allowTouchMove: true
+		});
+	}
+
+	function destroySwiper() {
+		if (mySwiper !== null) {
+			mySwiper.destroy(true, true);
+			mySwiper = null;
+		}
+	}
+
+	function checkScreenWidth() {
+		if (window.innerWidth <= 1280) {
+			if (mySwiper === null) {
+				initSwiper();
+			}
+		} else {
+			destroySwiper();
+		}
+	}
+    
+	window.addEventListener('load', checkScreenWidth);
+	window.addEventListener('resize', checkScreenWidth);
+};
+
+export { initialndexSliders, initialProductSlider, initialBreadcrambsSlider };

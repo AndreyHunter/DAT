@@ -20,17 +20,21 @@
 	<body>
 		@@include('html/_header.html')
 		<main class="main">
-			<ul class="breadcrumds">
-				<li class="breadcrumbs__item">
-					<a href="./index.html" class="breadcrumbs__link">Головна</a>
-				</li>
-				<li class="breadcrumbs__item">
-					<a href="./about-company.html" class="breadcrumbs__link">Про нас</a>
-				</li>
-				<li class="breadcrumbs__item breadcrumbs__item-active">
-					Договір публічної оферти
-				</li>
-			</ul>
+            <div class="breadcrambs-container container">
+                <div class="swiper breadcrumds-wrapper">
+                    <ul class="breadcrumds">
+                        <li class="breadcrumbs__item swiper-slide">
+                            <a href="./index.html" class="breadcrumbs__link">Головна</a>
+                        </li>
+                        <li class="breadcrumbs__item swiper-slide">
+                            <a href="./about-company.html" class="breadcrumbs__link">Про нас</a>
+                        </li>
+                        <li class="breadcrumbs__item breadcrumbs__item-active swiper-slide">
+                            Договір публічної оферти
+                        </li>
+                    </ul>
+                </div>
+            </div>
 			@@include('html/_agreement.html')
 		</main>
 

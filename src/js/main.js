@@ -9,10 +9,13 @@ import { getItem } from './modules/local-storage.js';
 import { createBasketItem } from './modules/render.js';
 import { initialChoises } from './modules/choices.js';
 
+import { initialBreadcrambsSlider } from './modules/swiper';
+
 import { modals } from './modules/modals.js';
 import openMobileMenu from './modules/mobile-menu.js';
 
 modals();
+initialBreadcrambsSlider();
 openMobileMenu('#nav-icon2', '.mobile-nav', 'open', 'active');
 
 // Рендер корзины

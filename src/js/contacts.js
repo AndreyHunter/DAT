@@ -23,8 +23,11 @@ import { transformFormData } from './modules/utils';
 
 import { contactsModal, openModal } from './modules/modals';
 
+import { initialBreadcrambsSlider } from './modules/swiper';
+
 modals();
 contactsModal();
+initialBreadcrambsSlider();
 openMobileMenu('#nav-icon2', '.mobile-nav', 'open', 'active');
 
 // Рендер корзины

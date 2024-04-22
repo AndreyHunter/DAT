@@ -7,7 +7,6 @@
 	margin-top: 50px;
 	margin-bottom: 8px;
 	display: flex;
-	justify-content: center;
 	align-items: center;
 	gap: 30px;
 
@@ -21,7 +20,9 @@
 }
 
 .breadcrumbs__item {
+    width: auto;
 	position: relative;
+    white-space: nowrap;
 }
 
 .breadcrumbs__link {
