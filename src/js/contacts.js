@@ -28,7 +28,7 @@ import { initialBreadcrambsSlider } from './modules/swiper';
 modals();
 contactsModal();
 initialBreadcrambsSlider();
-openMobileMenu('#nav-icon2', '.mobile-nav', 'open', 'active');
+openMobileMenu('#nav-icon2', '.mobaile-nav', 'open', 'active');
 
 // Рендер корзины
 const basket = getItem('basket');

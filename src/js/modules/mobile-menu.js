@@ -5,6 +5,8 @@ const openMobileMenu = (triggerBtn, navSelector, triggerClass, navSelectorClass)
 	trigger.addEventListener('click', () => {
 		trigger.classList.toggle(triggerClass);
 		menu.classList.toggle(navSelectorClass);
+		document.querySelector('.header__nav').classList.toggle('active');
+		document.body.classList.toggle('hidden-body');
 	});
 };
 

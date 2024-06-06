@@ -3,6 +3,8 @@ import { transformPrice } from './utils';
 const createProductCard = (data, selector) => {
 	const element = document.querySelector(selector);
 
+	element.innerHTML = '';
+
 	for (let key of data) {
 		const { id, title, image, price, inStock } = key;
 

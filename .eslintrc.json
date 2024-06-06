@@ -11,6 +11,6 @@
 	"rules": {
 		"semi": ["warn", "always"],
 		"quotes": ["warn", "single"],
-		"indent": ["warn", "tab"]
+		"indent": ["warn", "tab", { "SwitchCase": 0 }]
 	}
 }

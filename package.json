@@ -4,6 +4,7 @@
 		"@babel/preset-env": "^7.24.0",
 		"css-loader": "^6.10.0",
 		"eslint": "^8.57.0",
+		"gh-pages": "^6.1.1",
 		"gulp": "^4.0.2",
 		"gulp-autoprefixer": "^8.0.0",
 		"gulp-babel": "^8.0.0",
@@ -41,7 +42,8 @@
 		"choices.js": "^10.2.0",
 		"swiper": "^11.0.7"
 	},
-    "scripts": {
-        "format": "prettier --write \"src/**/*.js\""
-    }
+	"scripts": {
+        "deploy": "gh-pages -d docs",
+		"format": "prettier --write \"src/**/*.js\""
+	}
 }

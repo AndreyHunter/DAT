@@ -1,0 +1,148 @@
+.mobaile-nav {
+    display: none;
+    width: 100%;
+    height: 100%;
+    padding: 20px 0;
+    position: fixed;
+    top: 65px;
+    left: 0;
+    background-color: #1E6140;
+    z-index: 50;
+    animation: opacity .2s ease-in-out;
+}
+
+.mobaile-logo {
+    display: block;
+    max-width: 160px;
+    min-height: 80px;
+
+    svg {
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.mobaile-nav.active {
+    display: block;
+}
+
+@keyframes opacity {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+// Mobaile-nav__header
+
+.mobaile-nav__header {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+// Mobaile-nav__header-top
+
+.mobaile-nav__header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 20px;
+}
+
+.mobaile-nav__actions {
+    display: flex;
+    gap: 12px;
+}
+
+.mobaile-nav__actions .icon-circle {
+    border: 1px solid white;
+    width: 50px;
+	height: 50px;
+}
+
+.mobaile-nav__actions .heart-icon {
+    stroke: white;
+}
+
+.mobaile-nav__actions svg {
+    fill: white;
+    width: 1.3rem;
+    height: 1.3rem;
+}
+
+// Mobaile-nav__header-body 
+
+.mobaile-nav__header-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+}
+
+.mobaile-nav .phone {
+    display: flex;
+    align-items: center;
+}
+
+.mobaile-nav .phone .icon-circle {
+    width: 50px;
+	height: 50px;
+    border-color: white;
+    cursor: pointer;
+}
+
+.mobaile-nav .phone svg {
+    width: 1.6rem;
+    height: 1.6rem;
+    fill: white;
+}
+
+.mobaile-nav .phone__link {
+    color: white;
+}
+
+.mobaile-nav .header__search {
+    display: flex;
+    max-width: 50%;
+}
+
+// mobaile-nav__content
+
+.mobaile-nav__body {
+    padding-top: 30px;
+}
+
+.mobaile-nav__list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.mobaile-nav__link {
+    font-size: 1.7rem;
+    transition: var(--main-transition);
+    &:hover {
+        color: var(--accentColor);
+    }
+}
+
+// MEDIA 
+
+@media (max-width: 500px) {
+    .mobaile-nav__header-body {
+        flex-wrap: wrap-reverse;
+    }
+
+    .mobaile-nav .header__search {
+        max-width: 100%;
+    }
+}
+
+@media (max-width: 358px) {
+    .mobaile-nav__header-top {
+        flex-wrap: wrap;
+    }
+}

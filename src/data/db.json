@@ -13,6 +13,7 @@
             "image": "https://www.adama.com/ukraine/themes/custom/adama/logo.svg"
         },
         "category": {
+            "id": "seeds",
             "title": "Насіння",
             "link": "seeds"
         },
@@ -384,9 +385,10 @@
         "desc": "Такомир абсорбується корінням та наземною частиною бур’янів, пересувається по флоемі та ксилемі, накопичуючись в меристематичних ділянках. Виступає інгібітором ферменту ацетолактатсинтази (ALS), що призводить до зниження в рослинних тканинах концентрацїї амінокислот – валіну, лейцину та ізолейцину – з подальшим порушенням синтезу білка і нуклеїнових кислот. Ріст чутливих бур’янів зупиняється вже через декілька годин після обробки.",
         "price": 5699,
         "inStock": true,
-        "isNew": false,
+        "isNew": true,
         "isPromotion": true,
         "manufacturer": {
+            "id": "syngenta",
             "title": "Syngenta, Швейцарія",
             "image": "https://pol-ukr.com/wp-content/uploads/SYNGENTA-1.png"
         },
@@ -457,6 +459,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "chimagromarketing",
             "title": "Хімагромаркетинг, Китай",
             "image": "https://latifundist.com/media/company/600-s/00/01/1373/logoukr-01-106787.jpg"
         },
@@ -521,6 +524,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "bayer",
             "title": "Protect Garden (Bayer), Франція",
             "image": "https://panfermer.com.ua/content/images/41/120x120l75nn0/protect-garden-55557343565848.webp"
         },
@@ -597,6 +601,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "kisson",
             "title": "Киссон, Україна",
             "image": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRfyRlYAdcKyo3aKBewJBu7OVX2uwV1zkgOyyTSmUyREde0aTHVDnF2njIZkegKN2OKbiQ&usqp=CAU"
         },
@@ -666,6 +671,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "bros",
             "title": "Bros, Польща",
             "image": "https://parcel.com.ua/image/cache/catalog/image/cache/catalog/brands/bros-logo-150x150.webp"
         },
@@ -736,6 +742,7 @@
         "isNew": true,
         "isPromotion": false,
         "manufacturer": {
+            "id": "btu-center",
             "title": "БТУ-Центр, Україна",
             "image": "https://agrorobota.com.ua/storage/666b2054baeab7df67bfc7df179d0ceb/0Bd4COsI_RSo4CekI-cPQCC5VTZUTWD0.png"
         },
@@ -803,6 +810,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "adiant",
             "title": "Адіант, Україна",
             "image": "https://images.prom.ua/1277423445_w640_h640_1277423445.jpg"
         },
@@ -871,6 +879,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "haisser",
             "title": "Haisser, Китай",
             "image": "https://storgom.ua/cache/i/brands/haisser.1200x628.jpg"
         },
@@ -903,6 +912,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "bellota",
             "title": "Bellota, Іспанія",
             "image": "https://seeklogo.com/images/B/Bellota-logo-9222FCDEE3-seeklogo.com.png"
         },
@@ -935,6 +945,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "china",
             "title": "Китай",
             "image": "https://tenti.in.ua/catalog/wp-content/uploads/2021/09/1898944597_flag-kitaya.jpg"
         },
@@ -968,6 +979,7 @@
         "isNew": false,
         "isPromotion": true,
         "manufacturer": {
+            "id": "altuna",
             "title": "Altuna, Іспанія",
             "image": "https://www.altuna.es/wp-content/uploads/2019/06/altuna-group-cutting-tools.jpg"
         },
@@ -989,6 +1001,68 @@
             "Покриття ручки: Термопластична гума",
             "Кількість в упаковці: 1",
             "Призначення: призначена для використання в садовому та лісовому господарстві. Застосовується для зрізання дерев, обрізки гілок дерев, кущів тощо."
+        ]
+    },
+    {
+        "id": 17,
+        "image": "https://i.ibb.co/P6W0XV8/glusten-aduvant-syngenta-25-ml-16663055843942.jpg",
+        "title": "Ад’ювант Глюстен 25 мл",
+        "desc": "Ад’ювант Глюстен 25 мл, Syngenta - ад'ювант, що зменшує ризики фітотоксичності рослин, препарат природного походження, тож безпечний для корисної ентомофауни. Покращує ефективність засобів захисту рослин як у типових, так і в складних умовах. Забезпечує надійне утримання крапель робочого розчину, його поширення, посилює поглинання рослиною без ризику стікання. Ад'юванти мають надважливу роль у сучасній технології захисту рослин, адже знижують витрати основного препарату, зменшуючи негативний вплив пестицидів на екологію, роблячи обробки більш економічними та ефективними.",
+        "price": 28.50,
+        "inStock": true,
+        "isNew": true,
+        "isPromotion": false,
+        "manufacturer": {
+            "id": "syngenta", 
+            "title": "Syngenta, Швейцарія",
+            "image": "https://pol-ukr.com/wp-content/uploads/SYNGENTA-1.png"
+        },
+        "category": {
+            "title": "Засоби захисту рослин",
+            "link": "plants-protection"
+        },
+        "subCategory": {
+            "title": "Ад’юванти",
+            "link": "adjuvants"
+        },
+        "images": [
+            "https://i.ibb.co/P6W0XV8/glusten-aduvant-syngenta-25-ml-16663055843942.jpg",
+            "https://i.ibb.co/Jx6MZpk/glustensyngenta-1150x1150.webp",
+            "https://i.ibb.co/L8FPc5h/img-4143-1.jpg"
+        ],
+        "specifications": [
+            {
+                "title": "КЛАС ТОКСИЧНОСТІ:",
+                "answer": "IV мало небезпечні"
+            },
+            {
+                "title": "Вміст діючої речовини:",
+                "answer": "700 г/л"
+            },
+            {
+                "title": "Препаративна форма:",
+                "answer": "концентрат суспензії (КС)"
+            },
+            {
+                "title": "Норми витрати:",
+                "answer": "25 мл на 10 л робочого розчину препарату"
+            }
+        ],
+        "characteristics": [
+            "Виробник: Syngenta, Швейцарія",
+            "Діюча речовина: на основі полігліцерину",
+            "Препаративна форма: концентрат суспензії (КС)",
+            "Класифікація ВООЗ: IV мало небезпечні",
+            "Упаковка: 20 мл пакет",
+            "Хімічний склад: неорганічні",
+            "Період застосування: при змішуванні з препаратами додається останнім",
+            "Оброблювані культури: культури за регламентами використання засобів захисту рослин",
+            "Термін зберігання: 48 міс"
+        ],
+        "recomendations": [
+            "Застосовується в бакових сумішах з післясходовими гербіцидами, інсектицидами, фунгіцидами та регуляторами ростувиробництва компанії «Сингента»на культурах і за регламентами використання засобів захисту рослин.",
+            "Ад’ювант Глюстен можна застосовувати з біопрепаратами, адже він природного походження і не справляє негативного впливу на ці препарати, а навпаки, посилює їх дію, забезпечуючи краще покриття поверхні й утримання на ній препарату довше, що дуже важливо.",
+            "Не застосовувати в суміші з препаратами Актеллік, Тіовіт Джет, Квадріс."
         ]
     }
 ]

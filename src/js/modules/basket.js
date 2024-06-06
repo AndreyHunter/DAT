@@ -1,12 +1,12 @@
 import { getItem } from './local-storage';
 
 const updateBasketLenght = () => {
-	const basketLengthElement = document.querySelector('.basket-lenght');
 	const basketLength = getItem('basket');
-	basketLengthElement.textContent = basketLength.length;
+	const basketLengthElements = document.querySelectorAll('.basket-lenght');
+	basketLengthElements.forEach(item => item.textContent = basketLength.length);
 };
 
-const updateBasketBgColor = (basket) => {
+const updateBasketBgColor = (basket = getItem('basket')) => {
 	const basketButtons = document.querySelectorAll('.addToBasketBtn');
 
 	basketButtons.forEach((btn) => {
@@ -66,7 +66,7 @@ const createEmptyMessage = () => {
     `;
 };
 
-const checkBasketEmpty = (data) => {
+const checkBasketEmpty = (data = getItem('basket')) => {
 	if (!data.length) {
 		const basketList = document.querySelector('.basket__list');
 		const error = createEmptyMessage();

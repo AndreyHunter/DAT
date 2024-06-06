@@ -6,9 +6,7 @@ const getItem = (key) => {
 };
 
 const setItem = (key, value) => {
-	const basketLength = document.querySelector('.basket-lenght');
 	LS.setItem(key, JSON.stringify(value));
-	basketLength.textContent = value.length;
 };
 
 export { getItem, setItem, LS};

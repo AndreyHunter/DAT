@@ -22,8 +22,10 @@ import renderBreadCrambs from './modules/product-info/breadcrambs.js';
 
 import { modals } from './modules/modals.js';
 import tabs from './modules/tabs.js';
+import openMobileMenu from './modules/mobile-menu.js';
 
 modals();
+openMobileMenu('#nav-icon2', '.mobaile-nav', 'open', 'active');
 initialBreadcrambsSlider();
 
 tabs({

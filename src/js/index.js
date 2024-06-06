@@ -16,8 +16,8 @@ import { modals, openModal } from './modules/modals.js';
 import openMobileMenu from './modules/mobile-menu.js';
 
 modals();
+openMobileMenu('#nav-icon2', '.mobaile-nav', 'open', 'active');
 initialndexSliders();
-openMobileMenu('#nav-icon2', '.mobile-nav', 'open', 'active');
 choisesMenu();
 
 // Рендер продуктов
@@ -28,16 +28,16 @@ getData(PRODUCTS_URL)
 		createProductCard(novetly, '#novetlySliderWrapper');
 		createProductCard(promotions, '#promotion-sliderWrapper');
 	})
-	.then(() => {
-		updateBasketLenght();
-		updateBasketBgColor(getItem('basket'));
-	})
+	.then(() => updateBasketBgColor(getItem('basket')))
 	.catch((err) => console.error('Something went wrong', err));
 
 // Рендер корзины
 getProductsByIds(getItem('basket'), PRODUCTS_URL)
 	.then((products) => createBasketItem(products, '.basket__list'))
-	.then(() => checkBasketEmpty(getItem('basket')))
+	.then(() => {
+		checkBasketEmpty(getItem('basket'));
+		updateBasketLenght();
+	})
 	.then(() => initialChoises('.basket__product-select'))
 	.catch((error) => console.error('Error:', error));
 
@@ -64,13 +64,15 @@ const addToBasket = async (e) => {
 		openModal('.basket', '.basket__content', 'showModal', 'showModal-scale');
 	}
 
-	updateBasketBgColor(basket);
 	const basketArray = await getProductsByIds(basket, PRODUCTS_URL);
 	createBasketItem(basketArray, '.basket__list');
 	initialChoises('.basket__product-select');
+	
 
 	setItem('basket', basket);
-
+    
+	updateBasketBgColor(basket);
+	updateBasketLenght();
 	checkBasketEmpty(getItem('basket'));
 };
 

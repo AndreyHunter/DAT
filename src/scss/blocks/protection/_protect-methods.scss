@@ -1,6 +1,6 @@
 .plants-protection {
 	min-height: 500px;
-	padding-block: 109px;
+	padding: 100px 0;
 	position: relative;
 
 	&::before {
@@ -46,3 +46,8 @@
 	}
 }
 
+@media (max-width: 968px) {
+    .plants-protection {
+        padding: 30px 0;
+    }
+}

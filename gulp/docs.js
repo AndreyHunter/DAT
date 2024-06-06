@@ -107,7 +107,7 @@ gulp.task('copyJson:docs', function () {
 gulp.task('html:docs', function () {
 	return (
 		gulp
-			.src(['./src/pages/**/*.html', '!./src/pages/html/*.html'])
+			.src(['./src/pages/**/*.html', '!./src/pages/html/**/*.html'])
 			.pipe(changed('./docs/'))
 			.pipe(plumber(plumberNotify('HTML')))
 			.pipe(fileInclude(fileIncludeNotify))

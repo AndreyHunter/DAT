@@ -1,26 +1,26 @@
-import { PRODUCTS_URL } from './modules/server.js';
+import { PRODUCTS_URL } from '../modules/server.js';
 import {
 	getProductsByIds,
 	checkBasketEmpty,
 	updateBasketLenght,
-	updateBasketBgColor
-} from './modules/basket.js';
+	updateBasketBgColor,
+} from '../modules/basket.js';
 
-import { getItem, setItem } from './modules/local-storage.js';
-import { createProductCard, createBasketItem } from './modules/render.js';
-import renderCategoryFilter from './modules/products-page/products-filters';
-import sortProducts from './modules/products-page/products-sort.js';
-import { initialChoises } from './modules/choices.js';
-import { initialBreadcrambsSlider } from './modules/swiper';
+import { getItem, setItem } from '../modules/local-storage.js';
+import { createProductCard, createBasketItem } from '../modules/render.js';
+import renderCategoryFilter from '../modules/products-page/products-filters.js';
+import sortProducts from '../modules/products-page/products-sort.js';
+import { initialChoises } from '../modules/choices.js';
+import { initialBreadcrambsSlider } from '../modules/swiper.js';
 
-import { modals, openModal } from './modules/modals.js';
-import openMobileMenu from './modules/mobile-menu.js';
-import openNavBarFilter from './modules/filter-nav-bar.js';
+import { modals, openModal } from '../modules/modals.js';
+import openMobileMenu from '../modules/mobile-menu.js';
+import openNavBarFilter from '../modules/filter-nav-bar';
 
-import { getData } from './modules/utils.js';
+import { getData } from '../modules/utils.js';
 
 modals();
-openMobileMenu('#nav-icon2', '.mobaile-nav', 'open', 'active');
+openMobileMenu('#nav-icon2', '.mobile-nav', 'open', 'active');
 openNavBarFilter({
 	triggerBtn: '.open-filter-btn',
 	closeBtnSelector: '.p-filter-arrow',
@@ -42,27 +42,25 @@ getProductsByIds(getItem('basket'), PRODUCTS_URL)
 	.catch((err) => console.error('Something went wrong', err));
 
 // Рендер продуктов 
+
 const renderProducts = async (url) => {
 	try {
 		const res = await getData(url);
            
 		const plantsProtections = res.filter(item => item.category.link === 'plants-protection');
+		const adjuvants = plantsProtections.filter(item => item.subCategory?.link === 'adjuvants');
 
-		createProductCard(plantsProtections, '.protucts-content__list');
+		createProductCard(adjuvants, '.protucts-content__list');
 		updateBasketBgColor(getItem('basket'));
 		renderCategoryFilter(plantsProtections);
-		document.querySelectorAll('.products-length').forEach(item => {
-			item.textContent = `Показано ${plantsProtections.length} товарів`;
-		});
+		document.querySelector('.products-length').textContent = `Показано ${adjuvants.length} товарів`;
 
 	} catch (err) {
 		console.error('Feiled to fetch', err);
 	}
 };
 
-renderProducts(PRODUCTS_URL);
-
-// Добавление в корзину
+// Добавление в корзину 
 const addToBasket = async (e) => {
 	const targetButton = e.target.closest('.addToBasketBtn');
 	if (!targetButton) return;
@@ -88,12 +86,14 @@ const addToBasket = async (e) => {
 
 	setItem('basket', basket);
 
-	updateBasketBgColor(basket);
 	updateBasketLenght();
+	updateBasketBgColor(basket);
 	checkBasketEmpty(basket);
 };
 
 document.querySelector('.protucts-content').addEventListener('click', addToBasket);
+
+renderProducts(PRODUCTS_URL);
 
 // Фильтрация по производителю
 const manufacturerFilterContainer = document.querySelector('.p-filter-manufacturer .p-filter__list');
@@ -105,11 +105,11 @@ manufacturerFilterContainer.addEventListener('change', async () => {
 		document.querySelector('.protucts-content__list').innerHTML = '';
 		
 		const res = await getData(PRODUCTS_URL);
-		const plantsProtections = res.filter(item => item.category.link === 'plants-protection');
+		const adjuvants = res.filter(item => item.subCategory?.link === 'adjuvants');
 
-		let filteredProducts = plantsProtections;
+		let filteredProducts = adjuvants;
 		if (selectedManufacturers.length > 0) {
-			filteredProducts = plantsProtections.filter(item => selectedManufacturers.includes(item.manufacturer.id));
+			filteredProducts = adjuvants.filter(item => selectedManufacturers.includes(item.manufacturer.id));
 		}
 
 		createProductCard(filteredProducts, '.protucts-content__list');
@@ -121,4 +121,4 @@ manufacturerFilterContainer.addEventListener('change', async () => {
 });
 
 // Сортировка 
-document.querySelector('#products-sort').addEventListener('change', (e) => sortProducts(e, {category: 'plants-protection'}));
+document.querySelector('#products-sort').addEventListener('change', (e) => sortProducts(e, {subCategory: 'adjuvants'}));

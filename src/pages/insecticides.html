@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Інсектициди</title>
+    
+        <link
+            rel="shortcut icon"
+            href="./images/favicons/logo-dark.svg"
+            type="image/x-icon"
+        />
+
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/choices.js/public/assets/styles/choices.min.css"
+        />
+        <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+        />
+        <link rel="stylesheet" href="./css/main.css" />
+</head>
+<body>
+
+    @@include('html/_header.html')
+
+    <main class="main">
+        <div class="container">
+            <div class="swiper breadcrumds-wrapper">
+                <ul class="breadcrumds swiper-wrapper">
+                    <li class="breadcrumbs__item swiper-slide">
+                        <a href="index.html" class="breadcrumbs__link">Головна</a>
+                    </li>
+                    <li class="breadcrumbs__item swiper-slide">
+                        <a href="catalog.html" class="breadcrumbs__link">Каталог</a>
+                    </li>
+                    <li class="breadcrumbs__item swiper-slide breadcrumbs__item">
+                        <a href="plants-protection.html" class="breadcrumbs__link">Засоби захисту рослин</a>
+                    </li>
+                    <li class="breadcrumbs__item swiper-slide breadcrumbs__item-active">
+                        Інсектициди
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        @@include('html/product-pages/_insecticides.html')
+        @@include('html/_plants-protection-bag.html')
+    </main>
+
+    @@include('html/modals/_call-modal.html')
+    @@include('html/modals/_basket-modal.html')
+    @@include('html/_footer.html')
+
+    <script src="./js/insecticides.bundle.js" type="module" defer></script>
+</body>
+</html>
