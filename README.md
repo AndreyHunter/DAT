@@ -1,1 +1,1 @@
-https://andreyhunter.github.io/DAT-pages/
+https://andreyhunter.github.io/DAT/
